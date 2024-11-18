@@ -1,27 +1,39 @@
-# BpFrontCodePostaux
+# 🔎 Frontend : recherche des codes postaux
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+## Description
 
-## Development server
+Ce projet a pour but de fournir une interface web permettant de trouver différentes informations autour des codes postaux.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prérequis
 
-## Code scaffolding
+Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre machine :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Node.js** : https://nodejs.org/
+- **NPM** : est inclus avec Node.js
+- **Angular CLI** :
+  ```bash
+  npm install -g @angular/cli
+  ```
 
-## Build
+## Initialisation du projet
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Cloner le dépôt depuis GitHub
 
-## Running unit tests
+```bash
+git clone https://github.com/MalcolmBrt/bp-front-code-postaux.git
+cd bp-front-code-postaux
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Installer les dépendances
 
-## Running end-to-end tests
+```bash
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Lancer l'application
 
-## Further help
+```bash
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+L'application est disponible à l'adresse http://localhost:4200/.
