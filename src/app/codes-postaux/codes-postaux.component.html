@@ -4,18 +4,22 @@
     <input
       matInput
       type="text"
-      placeholder="ex : Nouméa"
+      placeholder="ex : NOUMEA"
       formControlName="nomCommune"
     />
     @if (formGroupCommune.controls.nomCommune.hasError("required")) {
     <mat-error>Veuillez saisir une commune</mat-error>
+    } @else if (formGroupCommune.controls.nomCommune.hasError("notfound")) {
+    <mat-error>La commune saisie est introuvable.</mat-error>
+    } @else if (formGroupCommune.controls.nomCommune.hasError("network")) {
+    <mat-error>Une erreur réseau est survenue.</mat-error>
     }
   </mat-form-field>
   <button
     mat-raised-button
     color="primary"
     type="submit"
-    [disabled]="formGroupCommune.invalid"
+    [disabled]="formGroupCommune.controls.nomCommune.hasError('required')"
     class="search-button"
   >
     <mat-icon>search</mat-icon>Rechercher
@@ -23,9 +27,5 @@
 </form>
 
 @if (codesPostauxJson.length != 0) {
-<pre>
-    {{ codesPostauxJson | json }}
-</pre>
-} @else {
-<p>Cette commune n'existe pas.</p>
+  <pre>{{ codesPostauxJson | json }}</pre>
 }

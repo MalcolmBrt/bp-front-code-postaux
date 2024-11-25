@@ -28,7 +28,7 @@ export class CodesPostauxComponent {
     nomCommune: new FormControl('', [Validators.required]),
   });
   private codePostauxService = inject(CodePostauxService);
-  public codesPostauxJson: CodePostal[] = [];
+  codesPostauxJson: CodePostal[] = [];
 
   search(): void {
     const nomCommune = this.formGroupCommune.value.nomCommune!; // est forcément non null
@@ -36,7 +36,15 @@ export class CodesPostauxComponent {
       next: (data) => (this.codesPostauxJson = data),
       error: (err) => {
         this.codesPostauxJson = [];
-        console.error(err);
+        if (err.status === 404) {
+          this.formGroupCommune.controls.nomCommune.setErrors({
+            notfound: true,
+          });
+        } else {
+          this.formGroupCommune.controls.nomCommune.setErrors({
+            network: true,
+          });
+        }
       },
     });
   }
