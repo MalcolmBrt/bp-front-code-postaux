@@ -11,7 +11,21 @@
     <mat-error>Veuillez saisir une commune</mat-error>
     }
   </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="formGroupCommune.invalid" class="search-button">
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="formGroupCommune.invalid"
+    class="search-button"
+  >
     <mat-icon>search</mat-icon>Rechercher
   </button>
 </form>
+
+@if (codesPostauxJson.length != 0) {
+<pre>
+    {{ codesPostauxJson | json }}
+</pre>
+} @else {
+<p>Cette commune n'existe pas.</p>
+}
