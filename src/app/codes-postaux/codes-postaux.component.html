@@ -1,1 +1,17 @@
-<p>codes-postaux works!</p>
+<form [formGroup]="formGroupCommune" (ngSubmit)="search()">
+  <mat-form-field appearance="outline">
+    <mat-label>Commune</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="ex : Nouméa"
+      formControlName="nomCommune"
+    />
+    @if (formGroupCommune.controls.nomCommune.hasError("required")) {
+    <mat-error>Veuillez saisir une commune</mat-error>
+    }
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="formGroupCommune.invalid" class="search-button">
+    <mat-icon>search</mat-icon>Rechercher
+  </button>
+</form>
