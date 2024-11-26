@@ -1,3 +1,7 @@
+.cp-global-container {
+  margin: 20px;
+}
+
 .search-button {
   position: absolute;
   height: 4em;

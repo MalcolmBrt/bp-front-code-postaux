@@ -1,0 +1,9 @@
+.boite-infos {
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.titre {
+  border-bottom: 1px solid;
+}

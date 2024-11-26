@@ -1,31 +1,36 @@
-<form [formGroup]="formGroupCommune" (ngSubmit)="search()">
-  <mat-form-field appearance="outline">
-    <mat-label>Commune</mat-label>
-    <input
-      matInput
-      type="text"
-      placeholder="ex : NOUMEA"
-      formControlName="nomCommune"
-    />
-    @if (formGroupCommune.controls.nomCommune.hasError("required")) {
-    <mat-error>Veuillez saisir une commune</mat-error>
-    } @else if (formGroupCommune.controls.nomCommune.hasError("notfound")) {
-    <mat-error>La commune saisie est introuvable.</mat-error>
-    } @else if (formGroupCommune.controls.nomCommune.hasError("network")) {
-    <mat-error>Une erreur réseau est survenue.</mat-error>
-    }
-  </mat-form-field>
-  <button
-    mat-raised-button
-    color="primary"
-    type="submit"
-    [disabled]="formGroupCommune.controls.nomCommune.hasError('required')"
-    class="search-button"
-  >
-    <mat-icon>search</mat-icon>Rechercher
-  </button>
-</form>
+<div class="cp-global-container">
+  <form [formGroup]="formGroupCommune" (ngSubmit)="search()">
+    <mat-form-field appearance="outline">
+      <mat-label>Commune</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="ex : NOUMEA"
+        formControlName="nomCommune"
+      />
+      @if (formGroupCommune.controls.nomCommune.hasError("required")) {
+      <mat-error>Veuillez saisir une commune</mat-error>
+      } @else if (formGroupCommune.controls.nomCommune.hasError("notfound")) {
+      <mat-error>La commune saisie est introuvable.</mat-error>
+      } @else if (formGroupCommune.controls.nomCommune.hasError("network")) {
+      <mat-error>Une erreur réseau est survenue.</mat-error>
+      }
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="formGroupCommune.controls.nomCommune.hasError('required')"
+      class="search-button"
+    >
+      <mat-icon>search</mat-icon>Rechercher
+    </button>
+  </form>
 
-@for (codePostal of codesPostauxJson; track $index) {
-  <app-boite-infos [titre]="codePostal.nomCommune" [details]="codePostal" ></app-boite-infos>
-}
+  @for (codePostal of codesPostauxJson; track $index) {
+  <app-boite-infos
+    [titre]="codePostal.nomCommune"
+    [details]="codePostal"
+  ></app-boite-infos>
+  }
+</div>

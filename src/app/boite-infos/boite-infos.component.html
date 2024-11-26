@@ -1,10 +1,6 @@
-<table>
-  @if (isCodePostal(details)) {
-  <tr>
-    <th>Commune : {{ titre }}</th>
-  </tr>
-  <tr>
-    <td>Code postal : {{ details.codePostal }}</td>
-  </tr>
-  }
-</table>
+@if (isCodePostal(details)) {
+<div class="boite-infos">
+  <div class="titre">Commune : {{ titre }}</div>
+  <div class="details">Code postal : {{ details.codePostal }}</div>
+</div>
+}
