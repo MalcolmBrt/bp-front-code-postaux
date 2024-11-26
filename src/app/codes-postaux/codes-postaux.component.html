@@ -26,6 +26,6 @@
   </button>
 </form>
 
-@if (codesPostauxJson.length != 0) {
-  <pre>{{ codesPostauxJson | json }}</pre>
+@for (codePostal of codesPostauxJson; track $index) {
+  <app-boite-infos [titre]="codePostal.nomCommune" [details]="codePostal" ></app-boite-infos>
 }

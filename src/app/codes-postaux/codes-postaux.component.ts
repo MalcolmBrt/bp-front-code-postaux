@@ -8,6 +8,7 @@ import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { CodePostauxService } from '../code-postaux.service';
 import { CodePostal } from '../code-postal';
+import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -19,6 +20,7 @@ import { CodePostal } from '../code-postal';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    BoiteInfosComponent,
   ],
   templateUrl: './codes-postaux.component.html',
   styleUrl: './codes-postaux.component.css',
@@ -33,7 +35,9 @@ export class CodesPostauxComponent {
   search(): void {
     const nomCommune = this.formGroupCommune.value.nomCommune!; // est forcément non null
     this.codePostauxService.getCodesPostaux(nomCommune).subscribe({
-      next: (data) => (this.codesPostauxJson = data),
+      next: (data) => {
+        this.codesPostauxJson = data;
+      },
       error: (err) => {
         this.codesPostauxJson = [];
         if (err.status === 404) {
