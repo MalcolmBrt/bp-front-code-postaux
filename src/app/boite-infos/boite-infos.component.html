@@ -1,6 +1,8 @@
 @if (isCodePostal(details)) {
-<div class="boite-infos">
-  <div class="titre">Commune : {{ titre }}</div>
-  <div class="details">Code postal : {{ details.codePostal }}</div>
-</div>
-}
+  <div class="boite-infos">
+    <div class="titre">{{ titre }}</div>
+    <div class="details">
+      <span class="label">Code postal :</span> {{ details.codePostal }}
+    </div>
+  </div>
+  }

@@ -1,9 +1,16 @@
 .cp-global-container {
-  margin: 20px;
+  margin: 30px;
+}
+
+.search-container {
+  display: flex;
+}
+
+.search-input {
+  flex-grow: 1;
 }
 
 .search-button {
-  position: absolute;
-  height: 4em;
   margin-left: 1em;
+  height: 4em;
 }
