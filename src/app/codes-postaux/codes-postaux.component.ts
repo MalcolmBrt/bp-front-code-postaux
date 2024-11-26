@@ -26,14 +26,14 @@ import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
   styleUrl: './codes-postaux.component.scss',
 })
 export class CodesPostauxComponent {
-  readonly formGroupCommune = new FormGroup({
+  readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
   private codePostauxService = inject(CodePostauxService);
   codesPostauxJson: CodePostal[] = [];
 
   search(): void {
-    const nomCommune = this.formGroupCommune.value.nomCommune!; // est forcément non null
+    const nomCommune = this.searchCommuneForm.value.nomCommune!; // est forcément non null
     this.codePostauxService.getCodesPostaux(nomCommune).subscribe({
       next: (data) => {
         this.codesPostauxJson = data;
@@ -41,11 +41,11 @@ export class CodesPostauxComponent {
       error: (err) => {
         this.codesPostauxJson = [];
         if (err.status === 404) {
-          this.formGroupCommune.controls.nomCommune.setErrors({
+          this.searchCommuneForm.controls.nomCommune.setErrors({
             notfound: true,
           });
         } else {
-          this.formGroupCommune.controls.nomCommune.setErrors({
+          this.searchCommuneForm.controls.nomCommune.setErrors({
             network: true,
           });
         }

@@ -1,5 +1,5 @@
 <div class="cp-container">
-  <form [formGroup]="formGroupCommune" (ngSubmit)="search()">
+  <form [formGroup]="searchCommuneForm" (ngSubmit)="search()">
     <div class="search-container">
       <mat-form-field appearance="outline" class="search-form-field">
         <mat-label>Commune</mat-label>
@@ -9,11 +9,11 @@
           placeholder="ex : NOUMEA"
           formControlName="nomCommune"
         />
-        @if (formGroupCommune.controls.nomCommune.hasError("required")) {
+        @if (searchCommuneForm.controls.nomCommune.hasError("required")) {
         <mat-error>Veuillez saisir une commune</mat-error>
-        } @else if (formGroupCommune.controls.nomCommune.hasError("notfound")) {
+        } @else if (searchCommuneForm.controls.nomCommune.hasError("notfound")) {
         <mat-error>La commune saisie est introuvable.</mat-error>
-        } @else if (formGroupCommune.controls.nomCommune.hasError("network")) {
+        } @else if (searchCommuneForm.controls.nomCommune.hasError("network")) {
         <mat-error>Une erreur réseau est survenue.</mat-error>
         }
       </mat-form-field>
@@ -21,7 +21,7 @@
         mat-raised-button
         color="primary"
         type="submit"
-        [disabled]="formGroupCommune.controls.nomCommune.hasError('required')"
+        [disabled]="searchCommuneForm.controls.nomCommune.hasError('required')"
         class="search-button"
       >
         <mat-icon>search</mat-icon>Rechercher
@@ -31,6 +31,7 @@
 
   @for (codePostal of codesPostauxJson; track $index) {
   <app-boite-infos
+    [type]="'CodePostal'"
     [titre]="codePostal.nomCommune"
     [details]="codePostal"
   ></app-boite-infos>
