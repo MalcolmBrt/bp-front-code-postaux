@@ -6,7 +6,7 @@ import { CodePostal } from '../code-postal';
   standalone: true,
   imports: [],
   templateUrl: './boite-infos.component.html',
-  styleUrl: './boite-infos.component.css',
+  styleUrl: './boite-infos.component.scss',
 })
 export class BoiteInfosComponent {
   @Input() titre!: string;

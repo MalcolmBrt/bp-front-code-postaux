@@ -23,7 +23,7 @@ import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
     BoiteInfosComponent,
   ],
   templateUrl: './codes-postaux.component.html',
-  styleUrl: './codes-postaux.component.css',
+  styleUrl: './codes-postaux.component.scss',
 })
 export class CodesPostauxComponent {
   readonly formGroupCommune = new FormGroup({
