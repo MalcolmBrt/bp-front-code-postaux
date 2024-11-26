@@ -9,10 +9,11 @@ import { CodePostal } from '../code-postal';
   styleUrl: './boite-infos.component.scss',
 })
 export class BoiteInfosComponent {
+  @Input() type!: string;
   @Input() titre!: string;
   @Input() details!: CodePostal;
 
-  isCodePostal(details: CodePostal): details is CodePostal {
-    return (details as CodePostal).nomCommune !== undefined;
+  isCodePostal(): boolean {
+    return this.type === 'CodePostal';
   }
 }
