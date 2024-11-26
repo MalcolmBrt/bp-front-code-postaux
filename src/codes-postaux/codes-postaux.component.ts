@@ -5,7 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { CodePostauxService } from './code-postaux.service';
+import { CodesPostauxService } from './codes-postaux.service';
 import { CodePostal } from './code-postal';
 import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
 
@@ -27,12 +27,12 @@ export class CodesPostauxComponent {
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
-  private codePostauxService = inject(CodePostauxService);
+  private codesPostauxService = inject(CodesPostauxService);
   codesPostauxJson: CodePostal[] = [];
 
   search(): void {
     const nomCommune = this.searchCommuneForm.value.nomCommune!; // est forcément non null
-    this.codePostauxService.getCodesPostaux(nomCommune).subscribe({
+    this.codesPostauxService.getCodesPostaux(nomCommune).subscribe({
       next: (data) => {
         this.codesPostauxJson = data;
       },
