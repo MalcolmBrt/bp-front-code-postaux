@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CodesPostauxComponent } from './codes-postaux/codes-postaux.component';
+import { CodesPostauxComponent } from '../codes-postaux/codes-postaux.component';
 
 @Component({
   selector: 'app-root',

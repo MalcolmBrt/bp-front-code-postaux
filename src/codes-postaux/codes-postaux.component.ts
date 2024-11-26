@@ -5,8 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { CodePostauxService } from '../code-postaux.service';
-import { CodePostal } from '../code-postal';
+import { CodePostauxService } from './code-postaux.service';
+import { CodePostal } from './code-postal';
 import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
 
 @Component({

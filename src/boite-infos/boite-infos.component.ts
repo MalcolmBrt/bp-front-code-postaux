@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CodePostal } from '../code-postal';
+import { CodePostal } from '../codes-postaux/code-postal';
 
 @Component({
   selector: 'app-boite-infos',
