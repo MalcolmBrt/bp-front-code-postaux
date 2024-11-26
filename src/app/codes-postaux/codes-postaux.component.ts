@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +14,6 @@ import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    JsonPipe,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
