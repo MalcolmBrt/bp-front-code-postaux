@@ -1,5 +1,5 @@
 <div class="bp-container">
-  <form [formGroup]="searchBPForm">
+  <form [formGroup]="searchBPForm" (ngSubmit)="search()">
     <div class="search-container">
       <mat-form-field appearance="outline" class="search-form-field">
         <mat-label>Numéro de boîte postale</mat-label>
@@ -30,4 +30,12 @@
       </button>
     </div>
   </form>
+
+  @for (boitePostale of boitesPostalesJson; track $index) {
+  <app-boite-infos
+    [type]="'BoitePostale'"
+    [titre]="'BP ' + boitePostale.numeroBP"
+    [details]="boitePostale"
+  ></app-boite-infos>
+  }
 </div>
