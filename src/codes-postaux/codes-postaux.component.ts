@@ -31,8 +31,10 @@ export class CodesPostauxComponent {
   codesPostauxJson: CodePostal[] = [];
 
   search(): void {
-    const nomCommune = this.searchCommuneForm.value.nomCommune!; // est forcément non null
-    this.codesPostauxService.getCodesPostaux(nomCommune).subscribe({
+    const params = {
+      nomCommune: this.searchCommuneForm.value.nomCommune!, // est forcément non null
+    };
+    this.codesPostauxService.getCodesPostaux(params).subscribe({
       next: (data) => {
         this.codesPostauxJson = data;
       },

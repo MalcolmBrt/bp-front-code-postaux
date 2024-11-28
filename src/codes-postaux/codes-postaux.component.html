@@ -12,9 +12,9 @@
         @if (searchCommuneForm.controls.nomCommune.hasError("required")) {
         <mat-error>Veuillez saisir une commune</mat-error>
         } @else if (searchCommuneForm.controls.nomCommune.hasError("notfound")) {
-        <mat-error>La commune saisie est introuvable.</mat-error>
+        <mat-error>La commune saisie est introuvable</mat-error>
         } @else if (searchCommuneForm.controls.nomCommune.hasError("network")) {
-        <mat-error>Une erreur réseau est survenue.</mat-error>
+        <mat-error>Une erreur réseau est survenue</mat-error>
         }
       </mat-form-field>
       <button
