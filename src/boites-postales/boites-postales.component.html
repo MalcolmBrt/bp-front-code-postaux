@@ -23,7 +23,7 @@
         mat-raised-button
         color="primary"
         type="submit"
-        [disabled]="searchBPForm.controls.numeroBP.hasError('required')"
+        [disabled]="isInvalid()"
         class="search-button"
       >
         <mat-icon>search</mat-icon>Rechercher

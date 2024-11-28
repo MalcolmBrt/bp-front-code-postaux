@@ -65,4 +65,11 @@ export class BoitesPostalesComponent {
       },
     });
   }
+
+  isInvalid(): boolean {
+    return (
+      this.searchBPForm.controls.numeroBP.hasError('required') ||
+      this.searchBPForm.controls.numeroBP.hasError('pattern')
+    );
+  }
 }
