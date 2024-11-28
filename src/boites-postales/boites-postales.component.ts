@@ -45,10 +45,9 @@ export class BoitesPostalesComponent {
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
 
-  search(): void {
-    this.isSubmitted = true;
+  getBoitesPostales(): void {
     const params = {
-      numeroBP: this.searchBPForm.value.numeroBP!, // est forcément non null
+      numeroBP: this.searchBPForm.controls.numeroBP.value!, // numeroBP est forcément non null
       pageNo: this.pageIndex,
       pageSize: this.pageSize,
     };
@@ -77,6 +76,13 @@ export class BoitesPostalesComponent {
     });
   }
 
+  search(): void {
+    this.isSubmitted = true;
+    this.pageIndex = 0;
+    this.pageSize = 10;
+    this.getBoitesPostales();
+  }
+
   isInvalid(): boolean {
     return (
       this.searchBPForm.controls.numeroBP.hasError('required') ||
@@ -86,9 +92,8 @@ export class BoitesPostalesComponent {
 
   handlePageEvent(e: PageEvent) {
     this.length = e.length;
-    this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
-
-    this.search();
+    this.pageSize = e.pageSize;
+    this.getBoitesPostales();
   }
 }
