@@ -37,5 +37,15 @@
     [titre]="'BP ' + boitePostale.numeroBP"
     [details]="boitePostale"
   ></app-boite-infos>
+
+  } @if (isSubmitted) {
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageIndex]="pageIndex"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+  >
+  </mat-paginator>
   }
 </div>

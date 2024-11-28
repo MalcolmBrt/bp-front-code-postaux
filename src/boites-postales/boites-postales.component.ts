@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
 import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from './boite-postale';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-boites-postales',
@@ -23,6 +24,7 @@ import { BoitePostale } from './boite-postale';
     MatButtonModule,
     MatIconModule,
     BoiteInfosComponent,
+    MatPaginatorModule,
   ],
   templateUrl: './boites-postales.component.html',
   styleUrl: './boites-postales.component.scss',
@@ -37,11 +39,18 @@ export class BoitesPostalesComponent {
   private boitesPostalesService = inject(BoitesPostalesService);
   boitesPostalesJson: BoitePostale[] = [];
 
+  isSubmitted = false;
+  length = 0;
+  pageIndex = 0;
+  pageSize = 10;
+  pageSizeOptions = [10, 25, 50];
+
   search(): void {
+    this.isSubmitted = true;
     const params = {
       numeroBP: this.searchBPForm.value.numeroBP!, // est forcément non null
-      pageNo: 0,
-      pageSize: 10,
+      pageNo: this.pageIndex,
+      pageSize: this.pageSize,
     };
     this.boitesPostalesService.getBoitesPostales(params).subscribe({
       next: (data) => {
@@ -50,9 +59,11 @@ export class BoitesPostalesComponent {
           numeroBP: params.numeroBP, // Ajout du numéro BP
           ...bp,
         }));
+        this.length = data.totalElements;
       },
       error: (err) => {
         this.boitesPostalesJson = [];
+        this.isSubmitted = false;
         if (err.status === 404) {
           this.searchBPForm.controls.numeroBP.setErrors({
             notfound: true,
@@ -71,5 +82,13 @@ export class BoitesPostalesComponent {
       this.searchBPForm.controls.numeroBP.hasError('required') ||
       this.searchBPForm.controls.numeroBP.hasError('pattern')
     );
+  }
+
+  handlePageEvent(e: PageEvent) {
+    this.length = e.length;
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
+
+    this.search();
   }
 }
