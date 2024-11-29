@@ -1,1 +1,52 @@
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$opt-primary-palette: (
+  100: #fcd90a,
+  500: #fcb109,
+  700: #fc860a,
+  contrast: (
+    100: #000,
+    500: #fff,
+    700: #fff,
+  ),
+);
+
+$opt-accent-palette: (
+  100: #28527d,
+  500: #28347c,
+  700: #38287d,
+  contrast: (
+    100: #000000,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
+
+$opt-primary: mat.define-palette($opt-primary-palette);
+$opt-accent: mat.define-palette($opt-accent-palette);
+$opt-warn: mat.define-palette(mat.$red-palette);
+
+$opt-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $opt-primary,
+      accent: $opt-accent,
+      warn: $opt-warn,
+    ),
+  )
+);
+
+:root {
+  --color-primary: #{mat.get-color-from-palette($opt-primary)};
+  --color-accent: #{mat.get-color-from-palette($opt-accent)};
+  --color-warn: #{mat.get-color-from-palette($opt-warn)};
+}
+
+@include mat.all-component-themes($opt-theme);
