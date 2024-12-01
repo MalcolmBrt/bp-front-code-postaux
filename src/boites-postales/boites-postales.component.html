@@ -34,6 +34,12 @@
   </div>
 </form>
 
+@if (isSubmitted) {
+  <div class="bps-trouvées">
+    {{length}} BP trouvées.
+  </div>
+}
+
 @for (boitePostale of boitesPostalesJson; track $index) {
 <app-boite-infos
   [type]="'BoitePostale'"
