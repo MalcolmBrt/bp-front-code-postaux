@@ -1,51 +1,54 @@
-<div class="bp-container">
-  <form [formGroup]="searchBPForm" (ngSubmit)="search()">
-    <div class="search-container">
-      <mat-form-field appearance="outline" class="search-form-field" color="accent">
-        <mat-label>Numéro de boîte postale</mat-label>
-        <input
-          matInput
-          type="text"
-          placeholder="ex : 12345"
-          formControlName="numeroBP"
-        />
-        @if (searchBPForm.controls.numeroBP.hasError("required")) {
-        <mat-error>Veuillez saisir un numéro de boîte postale</mat-error>
-        } @else if (searchBPForm.controls.numeroBP.hasError("pattern")) {
-        <mat-error>Le numéro de boîte postale ne doit contenir que des chiffres</mat-error>
-        } @else if (searchBPForm.controls.numeroBP.hasError("notfound")) {
-        <mat-error>La boîte postale saisie est introuvable</mat-error>
-        } @else if (searchBPForm.controls.numeroBP.hasError("network")) {
-        <mat-error>Une erreur réseau est survenue</mat-error>
-        }
-      </mat-form-field>
-      <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        [disabled]="isInvalid()"
-        class="search-button"
-      >
-        <mat-icon>search</mat-icon>Rechercher
-      </button>
-    </div>
-  </form>
+<form [formGroup]="searchBPForm" (ngSubmit)="search()">
+  <div class="search-container">
+    <mat-form-field
+      appearance="outline"
+      class="search-form-field"
+      color="accent"
+    >
+      <mat-label>Numéro de boîte postale</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="ex : 12345"
+        formControlName="numeroBP"
+      />
+      @if (searchBPForm.controls.numeroBP.hasError("required")) {
+      <mat-error>Veuillez saisir un numéro de boîte postale</mat-error>
+      } @else if (searchBPForm.controls.numeroBP.hasError("pattern")) {
+      <mat-error>Le numéro de boîte postale ne doit contenir que des chiffres</mat-error>
+      } @else if (searchBPForm.controls.numeroBP.hasError("notfound")) {
+      <mat-error>La boîte postale saisie est introuvable</mat-error>
+      } @else if (searchBPForm.controls.numeroBP.hasError("network")) {
+      <mat-error>Une erreur réseau est survenue</mat-error>
+      }
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="isInvalid()"
+      class="search-button"
+    >
+      <mat-icon>search</mat-icon>Rechercher
+    </button>
+  </div>
+</form>
 
-  @for (boitePostale of boitesPostalesJson; track $index) {
-  <app-boite-infos
-    [type]="'BoitePostale'"
-    [titre]="'BP ' + boitePostale.numeroBP"
-    [details]="boitePostale"
-  ></app-boite-infos>
+@for (boitePostale of boitesPostalesJson; track $index) {
+<app-boite-infos
+  [type]="'BoitePostale'"
+  [titre]="'BP ' + boitePostale.numeroBP"
+  [details]="boitePostale"
+></app-boite-infos>
 
-  } @if (isSubmitted) {
-  <mat-paginator
-    (page)="handlePageEvent($event)"
-    [length]="length"
-    [pageIndex]="pageIndex"
-    [pageSize]="pageSize"
-    [pageSizeOptions]="pageSizeOptions"
-  >
-  </mat-paginator>
-  }
-</div>
+} @if (isSubmitted) {
+<mat-paginator
+  (page)="handlePageEvent($event)"
+  [length]="length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  color="accent"
+>
+</mat-paginator>
+}

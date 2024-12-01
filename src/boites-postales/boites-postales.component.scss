@@ -1,17 +1,12 @@
-.bp-container {
-    margin: 30px;
-  
-    .search-container {
-      display: flex;
-  
-      .search-form-field {
-        flex-grow: 1;
-      }
-  
-      .search-button {
-        margin-left: 1em;
-        height: 4em;
-      }
-    }
+.search-container {
+  display: flex;
+
+  .search-form-field {
+    flex-grow: 1;
   }
-  
+
+  .search-button {
+    margin-left: 1em;
+    height: 4em;
+  }
+}
