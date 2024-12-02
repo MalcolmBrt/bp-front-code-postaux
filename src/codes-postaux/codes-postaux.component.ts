@@ -30,7 +30,10 @@ export class CodesPostauxComponent {
   private codesPostauxService = inject(CodesPostauxService);
   codesPostauxJson: CodePostal[] = [];
 
+  isSubmitted = false;
+
   search(): void {
+    this.isSubmitted = true;
     const params = {
       nomCommune: this.searchCommuneForm.value.nomCommune!, // est forcément non null
     };
@@ -40,6 +43,7 @@ export class CodesPostauxComponent {
       },
       error: (err) => {
         this.codesPostauxJson = [];
+        this.isSubmitted = false;
         if (err.status === 404) {
           this.searchCommuneForm.controls.nomCommune.setErrors({
             notfound: true,

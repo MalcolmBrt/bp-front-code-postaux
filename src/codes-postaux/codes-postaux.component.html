@@ -32,6 +32,12 @@
   </div>
 </form>
 
+@if (isSubmitted) {
+  <div class="cps-trouvées">
+    {{codesPostauxJson.length}} codes postaux trouvées.
+  </div>
+}
+
 @for (codePostal of codesPostauxJson; track $index) {
 <app-boite-infos
   [type]="'CodePostal'"
