@@ -56,4 +56,12 @@ export class CodesPostauxComponent {
       },
     });
   }
+
+  showNumberOfCPsFound(): string {
+    if (this.codesPostauxJson.length === 1) {
+      return `${this.codesPostauxJson.length} code postal trouvé.`
+    } else {
+      return `${this.codesPostauxJson.length} codes postaux trouvés.`
+    }
+  }
 }

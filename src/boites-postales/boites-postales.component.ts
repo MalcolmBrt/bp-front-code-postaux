@@ -96,4 +96,12 @@ export class BoitesPostalesComponent {
     this.pageSize = e.pageSize;
     this.getBoitesPostales();
   }
+
+  showNumberOfBPsFound(): string {
+    if (this.length === 1) {
+      return `${this.length} boîte postale trouvée.`
+    } else {
+      return `${this.length} boîtes postales trouvées.`
+    }
+  }
 }

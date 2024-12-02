@@ -36,7 +36,7 @@
 
 @if (isSubmitted) {
   <div class="bps-trouvées">
-    {{length}} BP trouvées.
+    {{showNumberOfBPsFound()}}
   </div>
 }
 
@@ -46,8 +46,9 @@
   [titre]="'BP ' + boitePostale.numeroBP"
   [details]="boitePostale"
 ></app-boite-infos>
+}
 
-} @if (isSubmitted) {
+@if (isSubmitted) {
 <mat-paginator
   (page)="handlePageEvent($event)"
   [length]="length"
