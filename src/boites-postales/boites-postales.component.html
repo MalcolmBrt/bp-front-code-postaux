@@ -34,11 +34,14 @@
   </div>
 </form>
 
-@if (hasFoundResults) {
-  <div class="bps-trouvées">
-    {{showNumberOfBPsFound()}}
-  </div>
+@if (isLoading) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 }
+
+@if (!isLoading && hasFoundResults) {
+<div class="bps-trouvées">
+  {{ showNumberOfBPsFound() }}
+</div>
 
 @for (boitePostale of boitesPostalesJson; track $index) {
 <app-boite-infos
@@ -48,7 +51,6 @@
 ></app-boite-infos>
 }
 
-@if (hasFoundResults) {
 <mat-paginator
   (page)="handlePageEvent($event)"
   [length]="length"

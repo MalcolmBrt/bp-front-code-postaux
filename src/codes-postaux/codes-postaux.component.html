@@ -32,11 +32,14 @@
   </div>
 </form>
 
-@if (hasFoundResults) {
-  <div class="cps-trouvées">
-    {{showNumberOfCPsFound()}}
-  </div>
+@if (isLoading) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 }
+
+@if (!isLoading && hasFoundResults) {
+<div class="cps-trouvées">
+  {{ showNumberOfCPsFound() }}
+</div>
 
 @for (codePostal of codesPostauxJson; track $index) {
 <app-boite-infos
@@ -44,4 +47,5 @@
   [titre]="codePostal.nomCommune"
   [details]="codePostal"
 ></app-boite-infos>
+}
 }

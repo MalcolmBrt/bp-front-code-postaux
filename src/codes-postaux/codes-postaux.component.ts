@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { CodePostal } from './code-postal';
 import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -19,6 +20,7 @@ import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
     MatButtonModule,
     MatIconModule,
     BoiteInfosComponent,
+    MatProgressBarModule
   ],
   templateUrl: './codes-postaux.component.html',
   styleUrl: './codes-postaux.component.scss',
@@ -31,12 +33,14 @@ export class CodesPostauxComponent {
   codesPostauxJson: CodePostal[] = [];
 
   hasFoundResults = false;
+  isLoading = false;
 
   previousValue = "";
 
   search(): void {
     const nomCommuneValue = this.searchCommuneForm.value.nomCommune!; // est forcément non null
     if (nomCommuneValue !== this.previousValue) {
+      this.isLoading = true;
       const params = {
         nomCommune: nomCommuneValue
       };
@@ -44,10 +48,12 @@ export class CodesPostauxComponent {
         next: (data) => {
           this.codesPostauxJson = data;
           this.hasFoundResults = true;
+          this.isLoading = false;
         },
         error: (err) => {
           this.codesPostauxJson = [];
           this.hasFoundResults = false;
+          this.isLoading = false;
           const errorType = err.status === 404 ? 'notfound' : 'network';
           this.searchCommuneForm.controls.nomCommune.setErrors({[errorType]: true})
         },

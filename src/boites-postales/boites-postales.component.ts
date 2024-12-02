@@ -13,6 +13,7 @@ import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
 import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from './boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-boites-postales',
@@ -25,6 +26,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
     MatIconModule,
     BoiteInfosComponent,
     MatPaginatorModule,
+    MatProgressBarModule
   ],
   templateUrl: './boites-postales.component.html',
   styleUrl: './boites-postales.component.scss',
@@ -40,6 +42,8 @@ export class BoitesPostalesComponent {
   boitesPostalesJson: BoitePostale[] = [];
 
   hasFoundResults = false;
+  isLoading = false;
+
   length = 0;
   pageIndex = 0;
   pageSize = 10;
@@ -62,10 +66,12 @@ export class BoitesPostalesComponent {
         }));
         this.length = data.totalElements;
         this.hasFoundResults = true;
+        this.isLoading = false;
       },
       error: (err) => {
         this.boitesPostalesJson = [];
         this.hasFoundResults = false;
+        this.isLoading = false;
         const errorType = err.status === 404 ? 'notfound' : 'network';
         this.searchBPForm.controls.numeroBP.setErrors({[errorType]: true})
       },
@@ -73,6 +79,10 @@ export class BoitesPostalesComponent {
   }
 
   search(): void {
+    this.isLoading = true;
+    if (this.isLoading) {
+      console.log("je passe ici");
+    }
     const numBPValue = this.searchBPForm.value.numeroBP!; // est forcément non null
     if (numBPValue != this.previousValue) {
       this.pageIndex = 0;
