@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "CodesPostaux",
-        "BoiteInfos"
+        "BoiteInfos",
+        "BoitesPostales"
     ]
 }

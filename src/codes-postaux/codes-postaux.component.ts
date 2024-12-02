@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { CodePostal } from './code-postal';
 import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -19,6 +20,7 @@ import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
     MatButtonModule,
     MatIconModule,
     BoiteInfosComponent,
+    MatProgressBarModule
   ],
   templateUrl: './codes-postaux.component.html',
   styleUrl: './codes-postaux.component.scss',
@@ -30,24 +32,41 @@ export class CodesPostauxComponent {
   private codesPostauxService = inject(CodesPostauxService);
   codesPostauxJson: CodePostal[] = [];
 
+  hasFoundResults = false;
+  isLoading = false;
+
+  previousValue = "";
+
   search(): void {
-    const nomCommune = this.searchCommuneForm.value.nomCommune!; // est forcément non null
-    this.codesPostauxService.getCodesPostaux(nomCommune).subscribe({
-      next: (data) => {
-        this.codesPostauxJson = data;
-      },
-      error: (err) => {
-        this.codesPostauxJson = [];
-        if (err.status === 404) {
-          this.searchCommuneForm.controls.nomCommune.setErrors({
-            notfound: true,
-          });
-        } else {
-          this.searchCommuneForm.controls.nomCommune.setErrors({
-            network: true,
-          });
-        }
-      },
-    });
+    const nomCommuneValue = this.searchCommuneForm.value.nomCommune!; // est forcément non null
+    if (nomCommuneValue !== this.previousValue) {
+      this.isLoading = true;
+      const params = {
+        nomCommune: nomCommuneValue
+      };
+      this.codesPostauxService.getCodesPostaux(params).subscribe({
+        next: (data) => {
+          this.codesPostauxJson = data;
+          this.hasFoundResults = true;
+          this.isLoading = false;
+        },
+        error: (err) => {
+          this.codesPostauxJson = [];
+          this.hasFoundResults = false;
+          this.isLoading = false;
+          const errorType = err.status === 404 ? 'notfound' : 'network';
+          this.searchCommuneForm.controls.nomCommune.setErrors({[errorType]: true})
+        },
+      });
+      this.previousValue = nomCommuneValue;
+    }
+  }
+
+  showNumberOfCPsFound(): string {
+    if (this.codesPostauxJson.length === 1) {
+      return `${this.codesPostauxJson.length} code postal trouvé.`
+    } else {
+      return `${this.codesPostauxJson.length} codes postaux trouvés.`
+    }
   }
 }
