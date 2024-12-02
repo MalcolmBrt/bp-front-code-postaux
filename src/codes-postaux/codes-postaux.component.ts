@@ -30,31 +30,30 @@ export class CodesPostauxComponent {
   private codesPostauxService = inject(CodesPostauxService);
   codesPostauxJson: CodePostal[] = [];
 
-  isSubmitted = false;
+  hasFoundResults = false;
+
+  previousValue = "";
 
   search(): void {
-    this.isSubmitted = true;
-    const params = {
-      nomCommune: this.searchCommuneForm.value.nomCommune!, // est forcément non null
-    };
-    this.codesPostauxService.getCodesPostaux(params).subscribe({
-      next: (data) => {
-        this.codesPostauxJson = data;
-      },
-      error: (err) => {
-        this.codesPostauxJson = [];
-        this.isSubmitted = false;
-        if (err.status === 404) {
-          this.searchCommuneForm.controls.nomCommune.setErrors({
-            notfound: true,
-          });
-        } else {
-          this.searchCommuneForm.controls.nomCommune.setErrors({
-            network: true,
-          });
-        }
-      },
-    });
+    const nomCommuneValue = this.searchCommuneForm.value.nomCommune!; // est forcément non null
+    if (nomCommuneValue !== this.previousValue) {
+      const params = {
+        nomCommune: nomCommuneValue
+      };
+      this.codesPostauxService.getCodesPostaux(params).subscribe({
+        next: (data) => {
+          this.codesPostauxJson = data;
+          this.hasFoundResults = true;
+        },
+        error: (err) => {
+          this.codesPostauxJson = [];
+          this.hasFoundResults = false;
+          const errorType = err.status === 404 ? 'notfound' : 'network';
+          this.searchCommuneForm.controls.nomCommune.setErrors({[errorType]: true})
+        },
+      });
+      this.previousValue = nomCommuneValue;
+    }
   }
 
   showNumberOfCPsFound(): string {

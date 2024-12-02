@@ -39,15 +39,17 @@ export class BoitesPostalesComponent {
   private boitesPostalesService = inject(BoitesPostalesService);
   boitesPostalesJson: BoitePostale[] = [];
 
-  isSubmitted = false;
+  hasFoundResults = false;
   length = 0;
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
 
+  previousValue = "";
+
   getBoitesPostales(): void {
     const params = {
-      numeroBP: this.searchBPForm.controls.numeroBP.value!, // numeroBP est forcément non null
+      numeroBP: this.searchBPForm.value.numeroBP!, // numeroBP est forcément non null
       pageNo: this.pageIndex,
       pageSize: this.pageSize,
     };
@@ -59,28 +61,25 @@ export class BoitesPostalesComponent {
           ...bp,
         }));
         this.length = data.totalElements;
+        this.hasFoundResults = true;
       },
       error: (err) => {
         this.boitesPostalesJson = [];
-        this.isSubmitted = false;
-        if (err.status === 404) {
-          this.searchBPForm.controls.numeroBP.setErrors({
-            notfound: true,
-          });
-        } else {
-          this.searchBPForm.controls.numeroBP.setErrors({
-            network: true,
-          });
-        }
+        this.hasFoundResults = false;
+        const errorType = err.status === 404 ? 'notfound' : 'network';
+        this.searchBPForm.controls.numeroBP.setErrors({[errorType]: true})
       },
     });
   }
 
   search(): void {
-    this.isSubmitted = true;
-    this.pageIndex = 0;
-    this.pageSize = 10;
-    this.getBoitesPostales();
+    const numBPValue = this.searchBPForm.value.numeroBP!; // est forcément non null
+    if (numBPValue != this.previousValue) {
+      this.pageIndex = 0;
+      this.pageSize = 10;
+      this.getBoitesPostales();
+      this.previousValue = numBPValue;
+    }
   }
 
   isInvalid(): boolean {

@@ -34,7 +34,7 @@
   </div>
 </form>
 
-@if (isSubmitted) {
+@if (hasFoundResults) {
   <div class="bps-trouvées">
     {{showNumberOfBPsFound()}}
   </div>
@@ -48,7 +48,7 @@
 ></app-boite-infos>
 }
 
-@if (isSubmitted) {
+@if (hasFoundResults) {
 <mat-paginator
   (page)="handlePageEvent($event)"
   [length]="length"
