@@ -1,1 +1,68 @@
-<p>faq works!</p>
+<mat-accordion>
+  <mat-toolbar color="primary">Contexte :</mat-toolbar>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Dans quel contexte cette application a-t-elle été développée ?</mat-expansion-panel-header>
+    <div>
+      Cette application a été réalisée dans le cadre de mon stage de licence informatique au sein de l'OPT-NC.
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Quelle a été ma mission principale durant ce stage ?</mat-expansion-panel-header>
+    <div>
+      Ma mission principale était de développer une application web permettant la recherche de codes postaux et de boîtes postales.
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Qu'ai-je appris de nouveau pendant ce stage ?</mat-expansion-panel-header>
+    <div>
+      Ce stage m'a permis d'apprendre à travailler avec Spring Boot et Angular, deux frameworks que je ne maîtrisais pas auparavant. 
+      J'ai également découvert des outils comme Gradle, Figma, et Angular Material, ainsi que des concepts comme les validations de données, 
+      la pagination et l'utilisation de systèmes de versionnement. De plus, j'ai appris à organiser mon travail avec Jira 
+      et un tableau Kanban pour structurer efficacement les étapes du développement.
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Comment me suis-je organisé pour mener à bien ce projet ?</mat-expansion-panel-header>
+    <div>
+      Le développement s'est fait par étapes, avec plusieurs versions successives de l'application, chacune apportant des fonctionnalités plus avancées. 
+      Cette approche progressive m'a permis de structurer mon travail et de tester les améliorations à chaque étape.
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>En quoi ce projet est-il utile à l'OPT-NC ?</mat-expansion-panel-header>
+    <div>
+      Ce projet répond à un besoin concret des clients de l'OPT-NC. Actuellement, la recherche de codes postaux se fait manuellement via un tableau sur le site. 
+      L'application simplifie et accélère cette recherche, offrant une solution plus ergonomique et intuitive.
+    </div>
+  </mat-expansion-panel>
+  
+<br>
+
+<mat-toolbar color="primary">Questions techniques :</mat-toolbar>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Comment rechercher un code postal ?</mat-expansion-panel-header>
+    <div>Il suffit d'envoyer une requête à <span class="code">/v1/code-postal?nomCommune=nomCommune</span> en remplaçant <span class="code">nomCommune</span> par le nom de la commune souhaitée.</div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Comment rechercher une boîte postale ?</mat-expansion-panel-header>
+    <div>Il suffit d'envoyer une requête à <span class="code">/v1/boite-postale?numeroBP=numeroBP</span> en remplaçant <span class="code">numeroBP</span> par le numéro de la boîte postale recherchée.</div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Quelles technologies ont été utilisées ?</mat-expansion-panel-header>
+    <div>
+      Spring Boot et Angular ont été utilisés respectivement pour le développement du backend et du frontend
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Que faire si une commune a plusieurs codes postaux ?</mat-expansion-panel-header>
+    <div>L'API renvoie une liste de tous les codes postaux associés à la commune.</div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Que se passe-t-il si une commune ou une boîte postale n'est pas trouvée ?</mat-expansion-panel-header>
+    <div>L'API retourne une erreur <span class="code">404 NOT FOUND</span> avec un message d'erreur indiquant qu'aucun résultat n'a été trouvé.</div>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Que se passe-t-il si des paramètres obligatoires ne sont pas fournis à l'API ?</mat-expansion-panel-header>
+    <div>L'API renvoie une erreur <span class="code">400 BAD REQUEST</span> avec un message d'erreur indiquant que les paramètres requis sont manquants.</div>
+  </mat-expansion-panel>
+</mat-accordion>
