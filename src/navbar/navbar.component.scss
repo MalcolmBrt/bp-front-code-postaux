@@ -1,0 +1,24 @@
+.navbar {
+  height: 60px;
+  border-bottom: 3px solid var(--color-primary);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .menus {
+    height: 100%;
+    margin-left: 20px;
+    margin-right: auto;
+  }
+
+  .logo {
+    height: 90%;
+  }
+
+  button {
+    height: 100%;
+    font-size: 1rem;
+  }
+}
