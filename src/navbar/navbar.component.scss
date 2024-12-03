@@ -4,12 +4,11 @@
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
+  
 
-  .menus {
+  .versions {
     height: 100%;
-    margin-left: 20px;
     margin-right: auto;
   }
 
@@ -19,6 +18,11 @@
 
   button {
     height: 100%;
-    font-size: 1rem;
+    margin-left: 20px;
+
+  }
+
+  .active {
+    border: 2px solid var(--color-primary);
   }
 }
