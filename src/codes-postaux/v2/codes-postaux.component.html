@@ -13,6 +13,11 @@
         formControlName="nomCommune"
         [matAutocomplete]="auto"
       />
+      @if (searchCommuneForm.value.nomCommune) {
+        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="searchCommuneForm.controls.nomCommune.reset()">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="search()">
         @for (commune of filteredCommunes | async; track commune) {
           <mat-option [value]="commune">{{commune}}</mat-option>

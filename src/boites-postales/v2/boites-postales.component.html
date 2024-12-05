@@ -12,6 +12,11 @@
         placeholder="ex : 12345"
         formControlName="numeroBP"
       />
+      @if (searchBPForm.value.numeroBP) {
+        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="searchBPForm.controls.numeroBP.reset()">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
       @if (searchBPForm.controls.numeroBP.hasError("required")) {
       <mat-error>Veuillez saisir un numéro de boîte postale</mat-error>
       } @else if (searchBPForm.controls.numeroBP.hasError("pattern")) {

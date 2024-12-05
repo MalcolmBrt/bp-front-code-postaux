@@ -12,7 +12,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AsyncPipe } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
-import { MatOptionSelectionChange } from '@angular/material/core';
 
 @Component({
   selector: 'app-codes-postaux',
