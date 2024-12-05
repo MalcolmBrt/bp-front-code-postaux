@@ -7,10 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CodesPostauxService {
-  private apiUrl = 'http://localhost:8080/v1/code-postal';
   private http = inject(HttpClient);
 
-  getCodesPostaux(params: any): Observable<CodePostal[]> {
-    return this.http.get<CodePostal[]>(this.apiUrl, { params });
+  getCodesPostaux(apiUrl: string, params: any): Observable<CodePostal[]> {
+    return this.http.get<CodePostal[]>(apiUrl, { params });
+  }
+
+  getCommunes(apiUrl: string): Observable<string[]> {
+    return this.http.get<string[]>(apiUrl);
   }
 }
