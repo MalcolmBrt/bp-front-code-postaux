@@ -49,7 +49,7 @@ export class BoitesPostalesComponent {
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
 
-  previousValue = "";
+  previousValue = '';
 
   getBoitesPostales(): void {
     const params = {
@@ -73,15 +73,15 @@ export class BoitesPostalesComponent {
         this.hasFoundResults = false;
         this.isLoading = false;
         const errorType = err.status === 404 ? 'notfound' : 'network';
-        this.searchBPForm.controls.numeroBP.setErrors({[errorType]: true})
+        this.searchBPForm.controls.numeroBP.setErrors({ [errorType]: true });
       },
     });
   }
 
   search(): void {
-    this.isLoading = true;
     const numBPValue = this.searchBPForm.value.numeroBP!; // est forcément non null
     if (numBPValue != this.previousValue) {
+      this.isLoading = true;
       this.pageIndex = 0;
       this.pageSize = 10;
       this.getBoitesPostales();
@@ -105,9 +105,9 @@ export class BoitesPostalesComponent {
 
   showNumberOfBPsFound(): string {
     if (this.length === 1) {
-      return `${this.length} boîte postale trouvée.`
+      return `${this.length} boîte postale trouvée.`;
     } else {
-      return `${this.length} boîtes postales trouvées.`
+      return `${this.length} boîtes postales trouvées.`;
     }
   }
 }
