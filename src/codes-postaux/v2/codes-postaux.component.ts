@@ -34,7 +34,6 @@ export class CodesPostauxComponent implements OnInit {
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
-  communeValue = "";
   private codesPostauxService = inject(CodesPostauxService);
   codesPostauxJson: CodePostal[] = [];
   hasFoundResults = false;
@@ -106,5 +105,5 @@ export class CodesPostauxComponent implements OnInit {
     return this.communes.filter((option) =>
       option.toLowerCase().includes(filterValue)
     );
-  }  
+  }
 }
