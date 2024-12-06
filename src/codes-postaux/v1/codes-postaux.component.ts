@@ -7,7 +7,7 @@ import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { CodePostal } from './code-postal';
-import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
+import { BoiteInfosComponent } from '../../boite-infos/v1/boite-infos.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({

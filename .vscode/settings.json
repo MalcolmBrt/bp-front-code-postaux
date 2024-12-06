@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "CodesPostaux",
         "BoiteInfos",
-        "BoitesPostales"
+        "BoitesPostales",
+        "BP-1726"
     ]
 }

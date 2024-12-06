@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { CodePostal } from '../codes-postaux/code-postal';
-import { BoitePostale } from '../boites-postales/boite-postale';
+import { CodePostal } from '../../codes-postaux/v1/code-postal';
+import { BoitePostale } from '../../boites-postales/v1/boite-postale';
 
 @Component({
   selector: 'app-boite-infos',

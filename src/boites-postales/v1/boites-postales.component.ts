@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { BoiteInfosComponent } from '../boite-infos/boite-infos.component';
+import { BoiteInfosComponent } from '../../boite-infos/v1/boite-infos.component';
 import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from './boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -26,7 +26,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatIconModule,
     BoiteInfosComponent,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
   templateUrl: './boites-postales.component.html',
   styleUrl: './boites-postales.component.scss',
@@ -80,9 +80,6 @@ export class BoitesPostalesComponent {
 
   search(): void {
     this.isLoading = true;
-    if (this.isLoading) {
-      console.log("je passe ici");
-    }
     const numBPValue = this.searchBPForm.value.numeroBP!; // est forcément non null
     if (numBPValue != this.previousValue) {
       this.pageIndex = 0;

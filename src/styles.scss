@@ -47,6 +47,9 @@ $opt-theme: mat.define-light-theme(
   --color-primary: #{mat.get-color-from-palette($opt-primary)};
   --color-accent: #{mat.get-color-from-palette($opt-accent)};
   --color-warn: #{mat.get-color-from-palette($opt-warn)};
+  --code-background-color: #f4f4f4;
+  --code-border-color: #ccc;
+  --code-color: #333;
 }
 
 @include mat.all-component-themes($opt-theme);

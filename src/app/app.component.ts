@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
-import { CodesPostauxComponent } from '../codes-postaux/codes-postaux.component';
-import { BoitesPostalesComponent } from '../boites-postales/boites-postales.component';
-import { MatRadioModule } from '@angular/material/radio';
-import { FormsModule } from '@angular/forms';
-
+import { NavbarComponent } from '../navbar/navbar.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CodesPostauxComponent, BoitesPostalesComponent, MatRadioModule, FormsModule],
+  imports: [NavbarComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
