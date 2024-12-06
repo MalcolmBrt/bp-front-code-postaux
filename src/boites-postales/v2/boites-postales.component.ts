@@ -40,20 +40,18 @@ export class BoitesPostalesComponent {
   });
   private boitesPostalesService = inject(BoitesPostalesService);
   boitesPostalesJson: BoitePostale[] = [];
-
   hasFoundResults = false;
   isLoading = false;
-
+  previousValue = '';
   length = 0;
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
 
-  previousValue = '';
-
   getBoitesPostales(): void {
+    const numeroBP = this.searchBPForm.value.numeroBP!; // numeroBP est forcément non null
     const params = {
-      numeroBP: this.searchBPForm.value.numeroBP!, // numeroBP est forcément non null
+      numeroBP: numeroBP,
       pageNo: this.pageIndex,
       pageSize: this.pageSize,
     };
@@ -61,7 +59,7 @@ export class BoitesPostalesComponent {
       next: (data) => {
         // Ajout manuel du numeroBP dans chaque objet de data.content
         this.boitesPostalesJson = data.content.map((bp: any) => ({
-          numeroBP: params.numeroBP, // Ajout du numéro BP
+          numeroBP: numeroBP, // Ajout du numéro BP
           ...bp,
         }));
         this.length = data.totalElements;
