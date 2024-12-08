@@ -25,7 +25,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    # Étape 4 : Déployer avec Angular CLI
+    # Étape 4 : Installer Angular CLI
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+
+    # Étape 5 : Déployer avec Angular CLI
     - name: Deploy to GitHub Pages
       run: ng deploy --base-href=/bp-front-code-postaux/
       env:
