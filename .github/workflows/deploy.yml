@@ -1,0 +1,31 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Étape 1 : Récupérer le code source
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Étape 2 : Configurer Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    # Étape 3 : Installer les dépendances
+    - name: Install dependencies
+      run: npm install
+
+    # Étape 4 : Déployer avec Angular CLI
+    - name: Deploy to GitHub Pages
+      run: ng deploy --base-href=/bp-front-code-postaux/
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
