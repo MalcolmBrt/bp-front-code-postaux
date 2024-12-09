@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { CodePostal } from '../codes-postaux/code-postal';
 
 @Component({
   selector: 'app-boite-infos',
@@ -11,9 +10,5 @@ import { CodePostal } from '../codes-postaux/code-postal';
 export class BoiteInfosComponent {
   @Input() type!: string;
   @Input() titre!: string;
-  @Input() details!: CodePostal;
-
-  isCodePostal(): boolean {
-    return this.type === 'CodePostal';
-  }
+  @Input() details!: any;
 }

@@ -1,0 +1,68 @@
+<form [formGroup]="searchBPForm" (ngSubmit)="search()">
+  <div class="search-container">
+    <mat-form-field
+      appearance="outline"
+      class="search-form-field"
+      color="accent"
+    >
+      <mat-label>Numéro de boîte postale</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="ex : 12345"
+        formControlName="numeroBP"
+      />
+      @if (searchBPForm.value.numeroBP) {
+        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="searchBPForm.controls.numeroBP.reset()">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+      @if (searchBPForm.controls.numeroBP.hasError("required")) {
+      <mat-error>Veuillez saisir un numéro de boîte postale</mat-error>
+      } @else if (searchBPForm.controls.numeroBP.hasError("pattern")) {
+      <mat-error>Le numéro de boîte postale ne doit contenir que des chiffres</mat-error>
+      } @else if (searchBPForm.controls.numeroBP.hasError("notfound")) {
+      <mat-error>La boîte postale saisie est introuvable</mat-error>
+      } @else if (searchBPForm.controls.numeroBP.hasError("network")) {
+      <mat-error>Une erreur réseau est survenue</mat-error>
+      }
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="isInvalid()"
+      class="search-button"
+    >
+      <mat-icon>search</mat-icon>Rechercher
+    </button>
+  </div>
+</form>
+
+@if (isLoading) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+@if (!isLoading && hasFoundResults) {
+<div class="bps-trouvées">
+  {{ showNumberOfBPsFound() }}
+</div>
+
+@for (boitePostale of boitesPostalesJson; track $index) {
+<app-boite-infos
+  [type]="'BoitePostale'"
+  [titre]="'BP ' + boitePostale.numeroBP"
+  [details]="boitePostale"
+></app-boite-infos>
+}
+
+<mat-paginator
+  (page)="handlePageEvent($event)"
+  [length]="length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  color="accent"
+>
+</mat-paginator>
+}

@@ -1,0 +1,16 @@
+.search-container {
+  display: flex;
+
+  .search-form-field {
+    flex-grow: 1;
+  }
+
+  .search-button {
+    margin-left: 1em;
+    height: 4em;
+  }
+}
+
+.bps-trouvées {
+  margin-bottom: 12px;
+}

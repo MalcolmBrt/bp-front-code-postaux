@@ -1,0 +1,26 @@
+.navbar {
+  height: 60px;
+  border-bottom: 3px solid var(--color-primary);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  .versions {
+    height: 100%;
+    margin-right: auto;
+  }
+
+  .logo {
+    height: 90%;
+  }
+
+  button {
+    height: 100%;
+    margin-left: 20px;
+  }
+
+  .active {
+    border: 2px solid var(--color-primary);
+  }
+}

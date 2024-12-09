@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.19.1"
+
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run build -- --base-href "/bp-front-code-postaux/"
+
+      - name: Copy index.html to 404.html
+        run: cp ./dist/bp-front-code-postaux/browser/index.html ./dist/bp-front-code-postaux/browser/404.html
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/bp-front-code-postaux/browser
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,12 @@
+<div class="champ-selection">
+  Je recherche :
+  <mat-radio-group [(ngModel)]="choixRecherche">
+    <mat-radio-button value="CodePostal">un code postal</mat-radio-button>
+    <mat-radio-button value="BoitePostale">une boîte postale</mat-radio-button>
+  </mat-radio-group>
+</div>
+@if (choixRecherche === "CodePostal") {
+<app-codes-postaux></app-codes-postaux>
+} @else if (choixRecherche === "BoitePostale") {
+<app-boites-postales></app-boites-postales>
+}
