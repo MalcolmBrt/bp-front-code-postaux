@@ -6,10 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BoitesPostalesService {
-  private apiUrl = 'http://localhost:8080/v1/boite-postale';
   private http = inject(HttpClient);
 
-  getBoitesPostales(params: any): Observable<any> {
-    return this.http.get<any>(this.apiUrl, { params });
+  getBoitesPostales(apiUrl: string, params: any): Observable<any> {
+    return this.http.get<any>(apiUrl, { params });
   }
 }

@@ -9,6 +9,7 @@ import { CodesPostauxService } from '../shared/codes-postaux.service';
 import { CodePostal } from '../shared/code-postal';
 import { BoiteInfosComponent } from '../../boite-infos/v1/boite-infos.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -26,7 +27,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrl: '../shared/codes-postaux.component.scss',
 })
 export class CodesPostauxComponent {
-  private apiUrl = 'http://localhost:8080/v1/code-postal';
+  private apiUrl = `${environment.apiURL}/v1/code-postal`;
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
