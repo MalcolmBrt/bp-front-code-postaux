@@ -21,6 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli # Installer Angular CLI globalement
 
       - name: Build the application
         run: npm run build -- --base-href "/bp-front-code-postaux/"
