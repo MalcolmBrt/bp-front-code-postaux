@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+      - feat/BP-1732
 
 jobs:
   deploy:
