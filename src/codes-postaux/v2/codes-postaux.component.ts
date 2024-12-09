@@ -12,6 +12,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AsyncPipe } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -31,6 +32,7 @@ import { map, Observable, startWith } from 'rxjs';
   styleUrl: '../shared/codes-postaux.component.scss',
 })
 export class CodesPostauxComponent implements OnInit {
+  private apiUrl = `${environment.apiURL}/v2/codes-postaux/search`;
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
@@ -49,12 +51,11 @@ export class CodesPostauxComponent implements OnInit {
   search(): void {
     const nomCommuneValue = this.searchCommuneForm.value.nomCommune!; // est forcément non null
     if (nomCommuneValue !== this.previousValue) {
-      const apiUrl = 'http://localhost:8080/v2/codes-postaux/search';
       this.isLoading = true;
       const params = {
         query: nomCommuneValue,
       };
-      this.codesPostauxService.getCodesPostaux(apiUrl, params).subscribe({
+      this.codesPostauxService.getCodesPostaux(this.apiUrl, params).subscribe({
         next: (data) => {
           this.codesPostauxJson = data;
           this.hasFoundResults = true;
