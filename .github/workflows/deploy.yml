@@ -1,36 +1,32 @@
-name: Deploy Angular to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - develop
-      - feat/BP-1732
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Étape 1 : Récupérer le code source
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # Étape 2 : Configurer Node.js
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-    # Étape 3 : Installer les dépendances
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    # Étape 4 : Installer Angular CLI
-    - name: Install Angular CLI
-      run: npm install -g @angular/cli
+      - name: Build the application
+        run: npm run build
 
-    # Étape 5 : Déployer avec Angular CLI
-    - name: Deploy to GitHub Pages
-      run: ng deploy --base-href=/bp-front-code-postaux/
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/bp-front-code-postaux/browser
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
