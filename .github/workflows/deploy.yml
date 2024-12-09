@@ -19,11 +19,11 @@ jobs:
         with:
           node-version: "18.19.1"
 
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json # Supprimer le fichier package-lock.json
+
       - name: Install dependencies
         run: npm install
-
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli # Installer Angular CLI globalement
 
       - name: Build the application
         run: npm run build -- --base-href "/bp-front-code-postaux/"
