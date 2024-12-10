@@ -88,13 +88,13 @@ $dark-theme: mat.define-dark-theme(
   --color-accent: #{mat.get-color-from-palette($light-accent)};
   --color-warn: #{mat.get-color-from-palette($warn)};
   --bg-color: #{mat.get-color-from-palette($light-palette, 100)};
-  @include mat.all-component-themes($light-theme);
 }
+@include mat.all-component-themes($light-theme);
 
 .darkmode {
   --color-primary: #{mat.get-color-from-palette($dark-primary)};
   --color-accent: #{mat.get-color-from-palette($dark-accent)};
   --color-warn: #{mat.get-color-from-palette($warn)};
   --bg-color: #{mat.get-color-from-palette($dark-palette, 100)};
-  @include mat.all-component-themes($dark-theme);
+  @include mat.all-component-colors($dark-theme);
 }
