@@ -7,13 +7,14 @@
   .titre {
     font-size: 1.2em;
     font-weight: bold;
-    color: black;
+    color: var(--bg-contrast-color);
     border-bottom: 2px solid var(--color-accent);
     padding-bottom: 6px;
   }
 
   .details {
     padding-top: 6px;
+    color: var(--bg-contrast-color);
     .label {
       font-weight: bold;
       color: var(--color-accent);
