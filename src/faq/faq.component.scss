@@ -1,9 +1,8 @@
 .code {
     background-color: var(--bg-color);
-    border: 1px solid var(--code-border-color);
+    border: 1px solid var(--color-primary);
     border-radius: 4px;
     padding: 0px 4px;
     font-family: 'Courier New', Courier, monospace;
-    color: var(--bg-contrast-color);
     display: inline-block;
 }

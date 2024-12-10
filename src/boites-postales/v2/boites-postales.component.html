@@ -13,7 +13,7 @@
         formControlName="numeroBP"
       />
       @if (searchBPForm.value.numeroBP) {
-        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="searchBPForm.controls.numeroBP.reset()">
+        <button type="button" color="accent" matSuffix mat-icon-button aria-label="Clear" (click)="searchBPForm.controls.numeroBP.reset()">
           <mat-icon>close</mat-icon>
         </button>
       }
@@ -62,7 +62,7 @@
   [pageIndex]="pageIndex"
   [pageSize]="pageSize"
   [pageSizeOptions]="pageSizeOptions"
-  color="accent"
+  color="primary"
 >
 </mat-paginator>
 }

@@ -1,5 +1,5 @@
 .boite-infos {
-  border: 1px solid var(--color-accent);
+  border: 2px solid var(--color-primary);
   border-radius: 4px;
   padding: 12px;
   margin-bottom: 12px;
@@ -7,14 +7,14 @@
   .titre {
     font-size: 1.2em;
     font-weight: bold;
-    color: var(--bg-contrast-color);
-    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-primary);
     padding-bottom: 6px;
   }
 
   .details {
     padding-top: 6px;
-    color: var(--bg-contrast-color);
+    color: var(--color-accent);
     .label {
       font-weight: bold;
       color: var(--color-accent);
