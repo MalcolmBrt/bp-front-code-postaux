@@ -14,7 +14,7 @@
         [matAutocomplete]="auto"
       />
       @if (searchCommuneForm.value.nomCommune) {
-        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="searchCommuneForm.controls.nomCommune.reset()">
+        <button type="button" color="accent" matSuffix mat-icon-button aria-label="Clear" (click)="searchCommuneForm.controls.nomCommune.reset()">
           <mat-icon>close</mat-icon>
         </button>
       }

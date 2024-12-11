@@ -2,3 +2,10 @@
 <div class="router-container">
   <router-outlet></router-outlet>
 </div>
+<button mat-fab color="primary" (click)="changeTheme()" class="theme-button">
+  @if (isDarkMode) {
+  <mat-icon>light_mode</mat-icon>
+  } @else {
+  <mat-icon>dark_mode</mat-icon>
+  }
+</button>

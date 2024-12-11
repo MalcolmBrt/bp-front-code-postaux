@@ -30,10 +30,18 @@ cd bp-front-code-postaux
 npm install
 ```
 
-3. Lancer l'application
+## Lancer l'application
 
-```bash
-ng serve
-```
+1. **Développement** :
+
+   ```bash
+   ng serve --configuration=dev
+   ```
+
+2. **GitHub Pages** (utilisation de mocks de l'API) :
+
+   ```bash
+   ng build --configuration=github-pages
+   ```
 
 L'application est disponible à l'adresse http://localhost:4200/.

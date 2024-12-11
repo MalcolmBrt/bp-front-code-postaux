@@ -13,4 +13,9 @@
 
 .bps-trouvées {
   margin-bottom: 12px;
+  color: var(--color-accent);
+}
+
+mat-paginator {
+  background-color: transparent;
 }
