@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BoiteInfosComponent } from '../../boite-infos/v1/boite-infos.component';
-import { BoitesPostalesService } from '../shared/boites-postales.service';
+import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from '../shared/boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -33,7 +33,6 @@ import { environment } from '../../environments/environment';
   styleUrl: '../shared/boites-postales.component.scss',
 })
 export class BoitesPostalesComponent {
-  private apiUrl = `${environment.apiURL}/v1/boite-postale`;
   readonly searchBPForm = new FormGroup({
     numeroBP: new FormControl('', [
       Validators.required,
@@ -59,7 +58,7 @@ export class BoitesPostalesComponent {
       pageNo: this.pageIndex,
       pageSize: this.pageSize,
     };
-    this.boitesPostalesService.getBoitesPostales(this.apiUrl, params).subscribe({
+    this.boitesPostalesService.getBoitesPostales(params).subscribe({
       next: (data) => {
         // Ajout manuel du numeroBP dans chaque objet de data.content
         this.boitesPostalesJson = data.content.map((bp: any) => ({

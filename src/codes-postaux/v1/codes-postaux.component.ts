@@ -5,7 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { CodesPostauxService } from '../shared/codes-postaux.service';
+import { CodesPostauxService } from './codes-postaux.service';
 import { CodePostal } from '../shared/code-postal';
 import { BoiteInfosComponent } from '../../boite-infos/v1/boite-infos.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -27,7 +27,6 @@ import { environment } from '../../environments/environment';
   styleUrl: '../shared/codes-postaux.component.scss',
 })
 export class CodesPostauxComponent {
-  private apiUrl = `${environment.apiURL}/v1/code-postal`;
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
@@ -44,7 +43,7 @@ export class CodesPostauxComponent {
       const params = {
         nomCommune: nomCommuneValue
       };
-      this.codesPostauxService.getCodesPostaux(this.apiUrl, params).subscribe({
+      this.codesPostauxService.getCodesPostaux(params).subscribe({
         next: (data) => {
           this.codesPostauxJson = data;
           this.hasFoundResults = true;
