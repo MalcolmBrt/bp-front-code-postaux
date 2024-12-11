@@ -5,7 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { CodesPostauxService } from '../shared/codes-postaux.service';
+import { CodesPostauxService } from './codes-postaux.service';
+import { CommunesService } from './communes.service';
 import { CodePostal } from '../shared/code-postal';
 import { BoiteInfosComponent } from '../../boite-infos/v1/boite-infos.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -32,11 +33,11 @@ import { environment } from '../../environments/environment';
   styleUrl: '../shared/codes-postaux.component.scss',
 })
 export class CodesPostauxComponent implements OnInit {
-  private apiUrl = `${environment.apiURL}/v2/codes-postaux/search`;
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
   private codesPostauxService = inject(CodesPostauxService);
+  private communesService = inject(CommunesService);
   codesPostauxJson: CodePostal[] = [];
   hasFoundResults = false;
   isLoading = false;
@@ -55,7 +56,7 @@ export class CodesPostauxComponent implements OnInit {
       const params = {
         query: nomCommuneValue,
       };
-      this.codesPostauxService.getCodesPostaux(this.apiUrl, params).subscribe({
+      this.codesPostauxService.getCodesPostaux(params).subscribe({
         next: (data) => {
           this.codesPostauxJson = data;
           this.hasFoundResults = true;
@@ -84,8 +85,7 @@ export class CodesPostauxComponent implements OnInit {
   }
 
   getCommunes(): void {
-    const apiUrl = 'http://localhost:8080/v2/codes-postaux/communes';
-    this.codesPostauxService.getCommunes(apiUrl).subscribe({
+    this.communesService.getCommunes().subscribe({
       next: (data) => {
         this.communes = data;
         this.filteredCommunes =
