@@ -1,4 +1,5 @@
 .resultat-bp-container {
+  position: relative;
   border: 3px solid var(--color-primary);
   border-radius: 4px;
   padding: 12px;
@@ -30,5 +31,11 @@
     .localite {
       border-bottom: 2px solid var(--color-primary);
     }
+  }
+
+  .copy-button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
   }
 }
