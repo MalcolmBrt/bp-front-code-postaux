@@ -49,6 +49,23 @@
 <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 } @if (!isLoading && hasFoundResults) {
 
+<form [formGroup]="infosDestinataireForm">
+<div class="infos-destinataire">
+  <mat-form-field class="info" color="accent" appearance="outline">
+    <mat-label>Prenom</mat-label>
+    <input matInput type="text" formControlName="prenom" />
+  </mat-form-field>
+  <mat-form-field class="info" color="accent" appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input matInput type="text" formControlName="nom" />
+  </mat-form-field>
+  <mat-form-field class="info" color="accent" appearance="outline">
+    <mat-label>Organisme</mat-label>
+    <input matInput type="text" formControlName="organisme" />
+  </mat-form-field>
+</div>
+</form>
+
 <div class="bps-trouvées">
   {{ showNumberOfBPsFound() }}
 </div>
@@ -56,6 +73,9 @@
 @for (boitePostale of boitesPostalesJson; track $index) {
 <app-resultat-bp
   [agence]="boitePostale.nomAgence"
+  [organisme]="infosDestinataireForm.value.organisme!"
+  [prenom]="infosDestinataireForm.value.prenom!"
+  [nom]="infosDestinataireForm.value.nom!"
   [numeroBP]="boitePostale.numeroBP"
   [codePostal]="boitePostale.codePostal"
   [localite]="boitePostale.nomLocalite"

@@ -29,7 +29,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatProgressBarModule,
   ],
   templateUrl: './boites-postales.component.html',
-  styleUrl: '../shared/boites-postales.component.scss',
+  styleUrl: './boites-postales.component.scss',
 })
 export class BoitesPostalesComponent {
   readonly searchBPForm = new FormGroup({
@@ -37,6 +37,11 @@ export class BoitesPostalesComponent {
       Validators.required,
       Validators.pattern('^[0-9]*$'),
     ]),
+  });
+  readonly infosDestinataireForm = new FormGroup({
+    organisme: new FormControl(''),
+    prenom: new FormControl(''),
+    nom: new FormControl(''),
   });
   private boitesPostalesService = inject(BoitesPostalesService);
   boitesPostalesJson: BoitePostale[] = [];

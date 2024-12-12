@@ -9,6 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ResultatBpComponent {
   @Input() agence!: string;
+  @Input() organisme!: string;
+  @Input() prenom!: string;
+  @Input() nom!: string;
   @Input() numeroBP!: number;
   @Input() codePostal!: number;
   @Input() localite!: string;

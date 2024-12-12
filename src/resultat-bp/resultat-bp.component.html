@@ -1,14 +1,19 @@
 <div class="resultat-bp-container">
   <div class="agence">{{ agence }}</div>
   <div class="details">
-    <div>Nom de l'organisme</div>
+    @if (organisme) {
+    <div>{{ organisme }}</div>
+    } @if (prenom && nom) {
+    <div>{{ prenom }} {{ nom }}</div>
+    } @else {
     <div>Identité du destinataire</div>
+    }
     <div>BP {{ numeroBP }}</div>
     <div class="code-postal">
       @for (digit of codePostal.toString(); track $index) {
       <span class="digit-border">{{ digit }}</span>
       }
-      <span>{{' '}}</span>
+      <span>{{ " " }}</span>
       <span class="localite">{{ localite }}</span>
     </div>
   </div>
