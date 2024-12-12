@@ -13,11 +13,17 @@
         formControlName="numeroBP"
       />
       @if (searchBPForm.value.numeroBP) {
-        <button type="button" color="accent" matSuffix mat-icon-button aria-label="Clear" (click)="searchBPForm.controls.numeroBP.reset()">
-          <mat-icon>close</mat-icon>
-        </button>
-      }
-      @if (searchBPForm.controls.numeroBP.hasError("required")) {
+      <button
+        type="button"
+        color="accent"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchBPForm.controls.numeroBP.reset()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      } @if (searchBPForm.controls.numeroBP.hasError("required")) {
       <mat-error>Veuillez saisir un numéro de boîte postale</mat-error>
       } @else if (searchBPForm.controls.numeroBP.hasError("pattern")) {
       <mat-error>Le numéro de boîte postale ne doit contenir que des chiffres</mat-error>
@@ -40,20 +46,20 @@
 </form>
 
 @if (isLoading) {
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-}
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+} @if (!isLoading && hasFoundResults) {
 
-@if (!isLoading && hasFoundResults) {
 <div class="bps-trouvées">
   {{ showNumberOfBPsFound() }}
 </div>
 
 @for (boitePostale of boitesPostalesJson; track $index) {
-<app-boite-infos
-  [type]="'BoitePostale'"
-  [titre]="'BP ' + boitePostale.numeroBP"
-  [details]="boitePostale"
-></app-boite-infos>
+<app-resultat-bp
+  [agence]="boitePostale.nomAgence"
+  [numeroBP]="boitePostale.numeroBP"
+  [codePostal]="boitePostale.codePostal"
+  [localite]="boitePostale.nomLocalite"
+></app-resultat-bp>
 }
 
 <mat-paginator
