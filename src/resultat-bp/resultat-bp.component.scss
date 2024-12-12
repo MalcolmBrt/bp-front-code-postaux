@@ -20,11 +20,13 @@
     color: var(--color-accent);
 
     .code-postal {
-      margin-top: 3px;
+      margin-top: 12px;
 
       .digit-border {
         border: 2px solid var(--color-primary);
-        margin-right: 2px;
+        margin-right: 1px;
+        padding-left: 2px;
+        padding-right: 2px;
       }
     }
 
