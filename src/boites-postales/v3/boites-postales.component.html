@@ -55,10 +55,10 @@
 
 @for (boitePostale of boitesPostalesJson; track $index) {
 <app-resultat-bp
-  [agence]="boitePostale.nomAgence"
-  [numeroBP]="boitePostale.numeroBP"
+  [agence]="boitePostale.agence"
+  [numeroBP]="boitePostale.numero"
   [codePostal]="boitePostale.codePostal"
-  [localite]="boitePostale.nomLocalite"
+  [localite]="boitePostale.localite"
 ></app-resultat-bp>
 }
 

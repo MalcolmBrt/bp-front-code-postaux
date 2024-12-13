@@ -11,6 +11,6 @@ export class BoitesPostalesService {
 
   getBoitesPostales(params: any): Observable<any> {
     // utilise temporairement l'API v2 puisque j'ai pas encoré fait l'endpoint v3
-    return this.http.get<any>(`${environment.baseApiURL}/v2/boite-postale`, { params });
+    return this.http.get<any>(`${environment.baseApiURL}/v3/boites-postales/search`, { params });
   }
 }

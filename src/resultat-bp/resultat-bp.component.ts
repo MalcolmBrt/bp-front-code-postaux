@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Clipboard } from '@angular/cdk/clipboard';
@@ -10,15 +10,19 @@ import { Clipboard } from '@angular/cdk/clipboard';
   templateUrl: './resultat-bp.component.html',
   styleUrl: './resultat-bp.component.scss',
 })
-export class ResultatBpComponent {
+export class ResultatBpComponent implements OnInit {
   @Input() agence!: string;
-  @Input() numeroBP!: number;
+  @Input() numeroBP!: string;
   @Input() codePostal!: number;
   @Input() localite!: string;
 
-  private clipboard = inject(Clipboard)
-  
+  private clipboard = inject(Clipboard);
+
+  ngOnInit(): void {
+    this.numeroBP = this.numeroBP.replace(/^0+/, '');
+  }
+
   copier(infos: HTMLElement): void {
-    this.clipboard.copy(infos.innerText)
+    this.clipboard.copy(infos.innerText);
   }
 }

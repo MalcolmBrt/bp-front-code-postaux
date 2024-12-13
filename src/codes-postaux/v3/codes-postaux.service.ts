@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { CodePostal } from '../shared/code-postal';
+import { CodePostal } from './code-postal';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 

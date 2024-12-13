@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ResultatBpComponent } from '../../resultat-bp/resultat-bp.component';
 import { BoitesPostalesService } from './boites-postales.service';
-import { BoitePostale } from '../shared/boite-postale';
+import { BoitePostale } from './boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
@@ -51,17 +51,13 @@ export class BoitesPostalesComponent {
   getBoitesPostales(): void {
     const numeroBP = this.searchBPForm.value.numeroBP!; // numeroBP est forcément non null
     const params = {
-      numeroBP: numeroBP,
+      query: numeroBP,
       pageNo: this.pageIndex,
       pageSize: this.pageSize,
     };
     this.boitesPostalesService.getBoitesPostales(params).subscribe({
       next: (data) => {
-        // Ajout manuel du numeroBP dans chaque objet de data.content
-        this.boitesPostalesJson = data.content.map((bp: any) => ({
-          numeroBP: numeroBP, // Ajout du numéro BP
-          ...bp,
-        }));
+        this.boitesPostalesJson = data.content;
         this.length = data.totalElements;
         this.hasFoundResults = true;
         this.isLoading = false;

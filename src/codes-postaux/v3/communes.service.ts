@@ -11,6 +11,6 @@ export class CommunesService {
   private http = inject(HttpClient);
 
   getCommunes(): Observable<string[]> {
-    return this.http.get<string[]>(`${environment.baseApiURL}/v3/codes-postaux/communes`);
+    return this.http.get<string[]>(`${environment.baseApiURL}/v3/codes-postaux/localites`);
   }
 }

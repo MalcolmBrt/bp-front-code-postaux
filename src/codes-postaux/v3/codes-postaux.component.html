@@ -14,13 +14,24 @@
         [matAutocomplete]="auto"
       />
       @if (searchCommuneForm.value.nomCommune) {
-        <button type="button" color="accent" matSuffix mat-icon-button aria-label="Clear" (click)="searchCommuneForm.controls.nomCommune.reset()">
-          <mat-icon>close</mat-icon>
-        </button>
+      <button
+        type="button"
+        color="accent"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchCommuneForm.controls.nomCommune.reset()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
       }
-      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="search()">
+      <mat-autocomplete
+        autoActiveFirstOption
+        #auto="matAutocomplete"
+        (optionSelected)="search()"
+      >
         @for (commune of filteredCommunes | async; track commune) {
-          <mat-option [value]="commune">{{commune}}</mat-option>
+        <mat-option [value]="commune">{{ commune }}</mat-option>
         }
       </mat-autocomplete>
       @if (searchCommuneForm.controls.nomCommune.hasError("required")) {
@@ -44,19 +55,16 @@
 </form>
 
 @if (isLoading) {
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-}
-
-@if (!isLoading && hasFoundResults) {
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+} @if (!isLoading && hasFoundResults) {
 <div class="cps-trouvées">
   {{ showNumberOfCPsFound() }}
 </div>
 
 @for (codePostal of codesPostauxJson; track $index) {
-<app-boite-infos
-  [type]="'CodePostal'"
-  [titre]="codePostal.nomCommune"
-  [details]="codePostal"
-></app-boite-infos>
+<app-resultat-cp
+  [localite]="codePostal.localite"
+  [code]="codePostal.code"
+></app-resultat-cp>
 }
 }
