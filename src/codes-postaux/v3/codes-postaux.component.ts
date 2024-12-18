@@ -7,8 +7,8 @@ import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { CommunesService } from './communes.service';
-import { CodePostal } from '../shared/code-postal';
-import { BoiteInfosComponent } from '../../boite-infos/boite-infos.component';
+import { CodePostal } from './code-postal';
+import { ResultatCpComponent } from "../../resultat-cp/resultat-cp.component";
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AsyncPipe } from '@angular/common';
@@ -23,11 +23,11 @@ import { map, Observable, startWith } from 'rxjs';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    BoiteInfosComponent,
+    ResultatCpComponent,
     MatProgressBarModule,
     MatAutocompleteModule,
     AsyncPipe,
-  ],
+],
   templateUrl: './codes-postaux.component.html',
   styleUrl: '../shared/codes-postaux.component.scss',
 })

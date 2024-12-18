@@ -1,0 +1,43 @@
+.resultat-bp-container {
+  position: relative;
+  border: 3px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+
+  .agence {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 6px;
+  }
+
+  .details {
+    padding-top: 6px;
+    color: var(--color-accent);
+
+    .code-postal {
+      margin-top: 12px;
+
+      .digit-border {
+        border: 2px solid var(--color-primary);
+        margin-right: 1px;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
+
+    .localite {
+      border-bottom: 2px solid var(--color-primary);
+    }
+  }
+
+  .copy-button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+  }
+}

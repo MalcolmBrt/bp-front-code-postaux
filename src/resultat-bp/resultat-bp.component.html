@@ -1,0 +1,18 @@
+<div class="resultat-bp-container">
+  <div class="agence">{{ agence }}</div>
+  <div class="details" #details>
+    <div>Nom de l'organisme</div>
+    <div>Identité du destinataire</div>
+    <div>BP {{ numeroBP }}</div>
+    <div class="code-postal">
+      @for (digit of codePostal.toString(); track $index) {
+      <span class="digit-border">{{ digit }}</span>
+      }
+      <span>{{ " " }}</span>
+      <span class="localite">{{ localite }}</span>
+    </div>
+  </div>
+  <button mat-flat-button color="primary" class="copy-button" (click)="copier(details)">
+    <mat-icon>content_copy</mat-icon>Copier
+  </button>
+</div>
