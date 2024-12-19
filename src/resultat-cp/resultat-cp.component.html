@@ -5,14 +5,16 @@
     </div>
     <div class="types">
       @if (codePostal.typeBp) {
-        <div class="type"><mat-icon>local_post_office</mat-icon>BP</div>
-      }
-      @if (codePostal.typeDomicile) {
-        <div class="type"><mat-icon>home</mat-icon>Domicile</div>
+      <div class="type"><mat-icon>local_post_office</mat-icon>BP</div>
+      } @if (codePostal.typeDomicile) {
+      <div class="type"><mat-icon>home</mat-icon>Domicile</div>
       }
     </div>
   </div>
   <div class="details">
     <div>{{ codePostal.code }}</div>
+    @if (codePostal.typeBp) {
+    <div>BPs {{ codePostal.bpMin }} à {{ codePostal.bpMax }}</div>
+    }
   </div>
 </div>

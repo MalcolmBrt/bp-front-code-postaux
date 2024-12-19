@@ -5,7 +5,6 @@
   padding: 12px;
   margin-bottom: 12px;
   font-size: 1.1rem;
-  text-transform: uppercase;
 
   .header {
     color: var(--color-accent);
@@ -13,6 +12,7 @@
     padding-bottom: 6px;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
 
     .localite {
       font-size: 1.2rem;
