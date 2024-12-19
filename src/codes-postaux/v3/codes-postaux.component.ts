@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
-import { CommunesService } from './communes.service';
+import { LocalitesService } from './localites.service';
 import { CodePostal } from './code-postal';
 import { ResultatCpComponent } from "../../resultat-cp/resultat-cp.component";
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -36,7 +36,7 @@ export class CodesPostauxComponent implements OnInit {
     nomCommune: new FormControl('', [Validators.required]),
   });
   private codesPostauxService = inject(CodesPostauxService);
-  private communesService = inject(CommunesService);
+  private localitesService = inject(LocalitesService);
   codesPostauxJson: CodePostal[] = [];
   hasFoundResults = false;
   isLoading = false;
@@ -84,7 +84,7 @@ export class CodesPostauxComponent implements OnInit {
   }
 
   getCommunes(): void {
-    this.communesService.getCommunes().subscribe({
+    this.localitesService.getLocalites().subscribe({
       next: (data) => {
         this.communes = data;
         this.filteredCommunes =
