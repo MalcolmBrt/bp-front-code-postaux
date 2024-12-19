@@ -11,6 +11,7 @@
         type="text"
         placeholder="ex : 12345"
         formControlName="numeroBP"
+        maxlength="5"
       />
       @if (searchBPForm.value.numeroBP) {
       <button
@@ -25,8 +26,6 @@
       </button>
       } @if (searchBPForm.controls.numeroBP.hasError("required")) {
       <mat-error>Veuillez saisir un numéro de boîte postale</mat-error>
-      } @else if (searchBPForm.controls.numeroBP.hasError("pattern")) {
-      <mat-error>Le numéro de boîte postale ne doit contenir que des chiffres</mat-error>
       } @else if (searchBPForm.controls.numeroBP.hasError("notfound")) {
       <mat-error>La boîte postale saisie est introuvable</mat-error>
       } @else if (searchBPForm.controls.numeroBP.hasError("network")) {

@@ -35,7 +35,6 @@ export class BoitesPostalesComponent {
   readonly searchBPForm = new FormGroup({
     numeroBP: new FormControl('', [
       Validators.required,
-      Validators.pattern('^[0-9]*$'),
     ]),
   });
   private boitesPostalesService = inject(BoitesPostalesService);
