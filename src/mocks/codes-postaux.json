@@ -1,387 +1,695 @@
 [
-    {
-      "id": 1050,
-      "localite": "NOUMEA",
-      "code": 98800
-    },
-    {
-      "id": 1100,
-      "localite": "NOUMEA CEDEX",
-      "code": 98801
-    },
-    {
-      "id": 1150,
-      "localite": "NOUMEA CEDEX",
-      "code": 98802
-    },
-    {
-      "id": 1200,
-      "localite": "NOUMEA CEDEX",
-      "code": 98803
-    },
-    {
-      "id": 1250,
-      "localite": "NOUMEA CEDEX",
-      "code": 98804
-    },
-    {
-      "id": 1300,
-      "localite": "NOUMEA CEDEX",
-      "code": 98805
-    },
-    {
-      "id": 1350,
-      "localite": "NOUMEA CEDEX",
-      "code": 98806
-    },
-    {
-      "id": 1400,
-      "localite": "NOUMEA CEDEX",
-      "code": 98807
-    },
-    {
-      "id": 1450,
-      "localite": "MONT DORE",
-      "code": 98809
-    },
-    {
-      "id": 1500,
-      "localite": "MONT DORE",
-      "code": 98810
-    },
-    {
-      "id": 1550,
-      "localite": "BELEP",
-      "code": 98811
-    },
-    {
-      "id": 1600,
-      "localite": "BOULOUPARIS",
-      "code": 98812
-    },
-    {
-      "id": 1650,
-      "localite": "CANALA",
-      "code": 98813
-    },
-    {
-      "id": 1700,
-      "localite": "FAYAOUE",
-      "code": 98814
-    },
-    {
-      "id": 1750,
-      "localite": "HIENGHENE",
-      "code": 98815
-    },
-    {
-      "id": 1800,
-      "localite": "HOUAILOU",
-      "code": 98816
-    },
-    {
-      "id": 1850,
-      "localite": "KAALA GOMEN",
-      "code": 98817
-    },
-    {
-      "id": 1900,
-      "localite": "KOUAOUA",
-      "code": 98818
-    },
-    {
-      "id": 1950,
-      "localite": "MOINDOU",
-      "code": 98819
-    },
-    {
-      "id": 2000,
-      "localite": "WE",
-      "code": 98820
-    },
-    {
-      "id": 2050,
-      "localite": "OUEGOA",
-      "code": 98821
-    },
-    {
-      "id": 2100,
-      "localite": "POINDIMIE",
-      "code": 98822
-    },
-    {
-      "id": 2150,
-      "localite": "PONERIHOUEN",
-      "code": 98823
-    },
-    {
-      "id": 2200,
-      "localite": "POUEBO",
-      "code": 98824
-    },
-    {
-      "id": 2250,
-      "localite": "POUEMBOUT",
-      "code": 98825
-    },
-    {
-      "id": 2300,
-      "localite": "POUM",
-      "code": 98826
-    },
-    {
-      "id": 2350,
-      "localite": "POYA",
-      "code": 98827
-    },
-    {
-      "id": 2400,
-      "localite": "TADINE",
-      "code": 98828
-    },
-    {
-      "id": 2450,
-      "localite": "THIO",
-      "code": 98829
-    },
-    {
-      "id": 2500,
-      "localite": "DUMBEA",
-      "code": 98830
-    },
-    {
-      "id": 2550,
-      "localite": "TOUHO",
-      "code": 98831
-    },
-    {
-      "id": 2600,
-      "localite": "VAO",
-      "code": 98832
-    },
-    {
-      "id": 2650,
-      "localite": "VOH",
-      "code": 98833
-    },
-    {
-      "id": 2700,
-      "localite": "YATE",
-      "code": 98834
-    },
-    {
-      "id": 2750,
-      "localite": "DUMBEA",
-      "code": 98835
-    },
-    {
-      "id": 2800,
-      "localite": "DUMBEA GA",
-      "code": 98836
-    },
-    {
-      "id": 2850,
-      "localite": "PORO",
-      "code": 98838
-    },
-    {
-      "id": 2900,
-      "localite": "DUMBEA",
-      "code": 98839
-    },
-    {
-      "id": 2950,
-      "localite": "TONTOUTA",
-      "code": 98840
-    },
-    {
-      "id": 3000,
-      "localite": "NOUMEA CEDEX",
-      "code": 98841
-    },
-    {
-      "id": 3050,
-      "localite": "NOUMEA CEDEX",
-      "code": 98843
-    },
-    {
-      "id": 3100,
-      "localite": "NOUMEA CEDEX",
-      "code": 98844
-    },
-    {
-      "id": 3150,
-      "localite": "NOUMEA CEDEX",
-      "code": 98848
-    },
-    {
-      "id": 3200,
-      "localite": "NOUMEA CEDEX",
-      "code": 98849
-    },
-    {
-      "id": 3250,
-      "localite": "KOUMAC",
-      "code": 98850
-    },
-    {
-      "id": 3300,
-      "localite": "NOUMEA CEDEX",
-      "code": 98851
-    },
-    {
-      "id": 3350,
-      "localite": "NOUMEA CEDEX",
-      "code": 98852
-    },
-    {
-      "id": 3400,
-      "localite": "NOUMEA CEDEX",
-      "code": 98855
-    },
-    {
-      "id": 3450,
-      "localite": "NOUMEA CEDEX",
-      "code": 98857
-    },
-    {
-      "id": 3500,
-      "localite": "KONE",
-      "code": 98859
-    },
-    {
-      "id": 3550,
-      "localite": "KONE",
-      "code": 98860
-    },
-    {
-      "id": 3600,
-      "localite": "NOUMEA CEDEX",
-      "code": 98862
-    },
-    {
-      "id": 3650,
-      "localite": "NOUMEA CEDEX",
-      "code": 98863
-    },
-    {
-      "id": 3700,
-      "localite": "NOUMEA CEDEX",
-      "code": 98865
-    },
-    {
-      "id": 3750,
-      "localite": "NOUMEA CEDEX",
-      "code": 98866
-    },
-    {
-      "id": 3800,
-      "localite": "BOURAIL",
-      "code": 98870
-    },
-    {
-      "id": 3850,
-      "localite": "PONT DES FRANÇAIS",
-      "code": 98874
-    },
-    {
-      "id": 3900,
-      "localite": "PLUM",
-      "code": 98875
-    },
-    {
-      "id": 3950,
-      "localite": "LA COULEE",
-      "code": 98876
-    },
-    {
-      "id": 4000,
-      "localite": "NEPOUI",
-      "code": 98877
-    },
-    {
-      "id": 4050,
-      "localite": "LA ROCHE",
-      "code": 98878
-    },
-    {
-      "id": 4100,
-      "localite": "LA FOA",
-      "code": 98880
-    },
-    {
-      "id": 4150,
-      "localite": "FARINO",
-      "code": 98881
-    },
-    {
-      "id": 4200,
-      "localite": "SARRAMEA",
-      "code": 98882
-    },
-    {
-      "id": 4250,
-      "localite": "OUACO",
-      "code": 98883
-    },
-    {
-      "id": 4300,
-      "localite": "CHEPENEHE",
-      "code": 98884
-    },
-    {
-      "id": 4350,
-      "localite": "MOU",
-      "code": 98885
-    },
-    {
-      "id": 4400,
-      "localite": "PAITA",
-      "code": 98889
-    },
-    {
-      "id": 4450,
-      "localite": "PAITA",
-      "code": 98890
-    },
-    {
-      "id": 4500,
-      "localite": "NOUMEA CEDEX",
-      "code": 98895
-    },
-    {
-      "id": 4550,
-      "localite": "NOUMEA CEDEX",
-      "code": 98897
-    },
-    {
-      "id": 4600,
-      "localite": "NOUMEA CEDEX ",
-      "code": 98899
-    },
-    {
-      "id": 4650,
-      "localite": "DUMBEA",
-      "code": 98837
-    },
-    {
-      "id": 4700,
-      "localite": "NOUMEA CEDEX",
-      "code": 98845
-    },
-    {
-      "id": 4750,
-      "localite": "NOUMEA CEDEX",
-      "code": 98846
-    },
-    {
-      "id": 4800,
-      "localite": "NOUMEA CEDEX",
-      "code": 98847
-    },
-    {
-      "id": 4850,
-      "localite": "NOUMEA CEDEX",
-      "code": 98853
-    }
-  ]
+  {
+    "id": 3850,
+    "localite": "PONT DES FRANÇAIS",
+    "code": 98874,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1001",
+    "bpMax": "2700"
+  },
+  {
+    "id": 1800,
+    "localite": "HOUAILOU",
+    "code": 98816,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "5312"
+  },
+  {
+    "id": 1300,
+    "localite": "NOUMEA CEDEX",
+    "code": 98805,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "10001",
+    "bpMax": "11004"
+  },
+  {
+    "id": 3650,
+    "localite": "NOUMEA CEDEX",
+    "code": 98863,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "27001",
+    "bpMax": "27900"
+  },
+  {
+    "id": 2550,
+    "localite": "TOUHO",
+    "code": 98831,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3424"
+  },
+  {
+    "id": 3800,
+    "localite": "BOURAIL",
+    "code": 98870,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4548"
+  },
+  {
+    "id": 4000,
+    "localite": "NEPOUI",
+    "code": 98877,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "500"
+  },
+  {
+    "id": 2500,
+    "localite": "DUMBEA",
+    "code": 98830,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4200"
+  },
+  {
+    "id": 1050,
+    "localite": "NOUMEA",
+    "code": 98800,
+    "typeDomicile": true,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 2900,
+    "localite": "DUMBEA",
+    "code": 98839,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "4001",
+    "bpMax": "5100"
+  },
+  {
+    "id": 4200,
+    "localite": "SARRAMEA",
+    "code": 98882,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "2001",
+    "bpMax": "2324"
+  },
+  {
+    "id": 1750,
+    "localite": "HIENGHENE",
+    "code": 98815,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "5024"
+  },
+  {
+    "id": 4800,
+    "localite": "NOUMEA CEDEX",
+    "code": 98847,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "4201",
+    "bpMax": "5100"
+  },
+  {
+    "id": 2600,
+    "localite": "VAO",
+    "code": 98832,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "2224"
+  },
+  {
+    "id": 3200,
+    "localite": "NOUMEA CEDEX",
+    "code": 98849,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "H1",
+    "bpMax": "M5"
+  },
+  {
+    "id": 3500,
+    "localite": "KONE",
+    "code": 98859,
+    "typeDomicile": true,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 4250,
+    "localite": "OUACO",
+    "code": 98883,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "100"
+  },
+  {
+    "id": 3450,
+    "localite": "NOUMEA CEDEX",
+    "code": 98857,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "18001",
+    "bpMax": "18950"
+  },
+  {
+    "id": 2200,
+    "localite": "POUEBO",
+    "code": 98824,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4648"
+  },
+  {
+    "id": 2050,
+    "localite": "OUEGOA",
+    "code": 98821,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4124"
+  },
+  {
+    "id": 3550,
+    "localite": "KONE",
+    "code": 98860,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "7250"
+  },
+  {
+    "id": 4700,
+    "localite": "NOUMEA CEDEX",
+    "code": 98845,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "1900"
+  },
+  {
+    "id": 2800,
+    "localite": "DUMBEA GA",
+    "code": 98836,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "850"
+  },
+  {
+    "id": 1650,
+    "localite": "CANALA",
+    "code": 98813,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3648"
+  },
+  {
+    "id": 2750,
+    "localite": "DUMBEA",
+    "code": 98835,
+    "typeDomicile": true,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 4450,
+    "localite": "PAITA",
+    "code": 98890,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "11250"
+  },
+  {
+    "id": 3300,
+    "localite": "NOUMEA CEDEX",
+    "code": 98851,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "N2",
+    "bpMax": "R5"
+  },
+  {
+    "id": 4750,
+    "localite": "NOUMEA CEDEX",
+    "code": 98846,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1901",
+    "bpMax": "4200"
+  },
+  {
+    "id": 2950,
+    "localite": "TONTOUTA",
+    "code": 98840,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "750"
+  },
+  {
+    "id": 4150,
+    "localite": "FARINO",
+    "code": 98881,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "348"
+  },
+  {
+    "id": 3000,
+    "localite": "NOUMEA CEDEX",
+    "code": 98841,
+    "typeDomicile": false,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 4550,
+    "localite": "NOUMEA CEDEX",
+    "code": 98897,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "32001",
+    "bpMax": "33500"
+  },
+  {
+    "id": 2450,
+    "localite": "THIO",
+    "code": 98829,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3548"
+  },
+  {
+    "id": 3100,
+    "localite": "NOUMEA CEDEX",
+    "code": 98844,
+    "typeDomicile": false,
+    "typeBp": false,
+    "bpMin": "C5",
+    "bpMax": "C5"
+  },
+  {
+    "id": 1400,
+    "localite": "NOUMEA CEDEX",
+    "code": 98807,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "8001",
+    "bpMax": "9800"
+  },
+  {
+    "id": 1850,
+    "localite": "KAALA GOMEN",
+    "code": 98817,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3336"
+  },
+  {
+    "id": 3050,
+    "localite": "NOUMEA CEDEX",
+    "code": 98843,
+    "typeDomicile": false,
+    "typeBp": false,
+    "bpMin": "38",
+    "bpMax": "38"
+  },
+  {
+    "id": 2650,
+    "localite": "VOH",
+    "code": 98833,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4348"
+  },
+  {
+    "id": 3350,
+    "localite": "NOUMEA CEDEX",
+    "code": 98852,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "T1",
+    "bpMax": "X5"
+  },
+  {
+    "id": 2150,
+    "localite": "PONERIHOUEN",
+    "code": 98823,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3824"
+  },
+  {
+    "id": 3950,
+    "localite": "LA COULEE",
+    "code": 98876,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "7001",
+    "bpMax": "7950"
+  },
+  {
+    "id": 2350,
+    "localite": "POYA",
+    "code": 98827,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4124"
+  },
+  {
+    "id": 2000,
+    "localite": "WE",
+    "code": 98820,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "5936"
+  },
+  {
+    "id": 1450,
+    "localite": "MONT DORE",
+    "code": 98809,
+    "typeDomicile": true,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 4850,
+    "localite": "NOUMEA CEDEX",
+    "code": 98853,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "5101",
+    "bpMax": "5600"
+  },
+  {
+    "id": 2300,
+    "localite": "POUM",
+    "code": 98826,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "2424"
+  },
+  {
+    "id": 2250,
+    "localite": "POUEMBOUT",
+    "code": 98825,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3124"
+  },
+  {
+    "id": 4300,
+    "localite": "CHEPENEHE",
+    "code": 98884,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "370"
+  },
+  {
+    "id": 1600,
+    "localite": "BOULOUPARIS",
+    "code": 98812,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "1498"
+  },
+  {
+    "id": 2700,
+    "localite": "YATE",
+    "code": 98834,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "2524"
+  },
+  {
+    "id": 3150,
+    "localite": "NOUMEA CEDEX",
+    "code": 98848,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "A1",
+    "bpMax": "G5"
+  },
+  {
+    "id": 3400,
+    "localite": "NOUMEA CEDEX",
+    "code": 98855,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "20001",
+    "bpMax": "20100"
+  },
+  {
+    "id": 3600,
+    "localite": "NOUMEA CEDEX",
+    "code": 98862,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "17001",
+    "bpMax": "18000"
+  },
+  {
+    "id": 2100,
+    "localite": "POINDIMIE",
+    "code": 98822,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4924"
+  },
+  {
+    "id": 4500,
+    "localite": "NOUMEA CEDEX",
+    "code": 98895,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "91",
+    "bpMax": "31699"
+  },
+  {
+    "id": 4400,
+    "localite": "PAITA",
+    "code": 98889,
+    "typeDomicile": true,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 3750,
+    "localite": "NOUMEA CEDEX",
+    "code": 98866,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "26001",
+    "bpMax": "27000"
+  },
+  {
+    "id": 4100,
+    "localite": "LA FOA",
+    "code": 98880,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4224"
+  },
+  {
+    "id": 1250,
+    "localite": "NOUMEA CEDEX",
+    "code": 98804,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "15001",
+    "bpMax": "16900"
+  },
+  {
+    "id": 3700,
+    "localite": "NOUMEA CEDEX",
+    "code": 98865,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "40001",
+    "bpMax": "DCS18"
+  },
+  {
+    "id": 1150,
+    "localite": "NOUMEA CEDEX",
+    "code": 98802,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "11001",
+    "bpMax": "MGA40"
+  },
+  {
+    "id": 4050,
+    "localite": "LA ROCHE",
+    "code": 98878,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1001",
+    "bpMax": "1450"
+  },
+  {
+    "id": 3250,
+    "localite": "KOUMAC",
+    "code": 98850,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3324"
+  },
+  {
+    "id": 4650,
+    "localite": "DUMBEA",
+    "code": 98837,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "10001",
+    "bpMax": "10250"
+  },
+  {
+    "id": 1500,
+    "localite": "MONT DORE",
+    "code": 98810,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "6424"
+  },
+  {
+    "id": 1350,
+    "localite": "NOUMEA CEDEX",
+    "code": 98806,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "6001",
+    "bpMax": "6950"
+  },
+  {
+    "id": 4600,
+    "localite": "NOUMEA CEDEX ",
+    "code": 98899,
+    "typeDomicile": false,
+    "typeBp": false,
+    "bpMin": null,
+    "bpMax": null
+  },
+  {
+    "id": 1100,
+    "localite": "NOUMEA CEDEX",
+    "code": 98801,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "7001",
+    "bpMax": "7970"
+  },
+  {
+    "id": 1200,
+    "localite": "NOUMEA CEDEX",
+    "code": 98803,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "13001",
+    "bpMax": "15000"
+  },
+  {
+    "id": 1950,
+    "localite": "MOINDOU",
+    "code": 98819,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "3424"
+  },
+  {
+    "id": 1550,
+    "localite": "BELEP",
+    "code": 98811,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "100"
+  },
+  {
+    "id": 2400,
+    "localite": "TADINE",
+    "code": 98828,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4124"
+  },
+  {
+    "id": 3900,
+    "localite": "PLUM",
+    "code": 98875,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "5001",
+    "bpMax": "6011"
+  },
+  {
+    "id": 1900,
+    "localite": "KOUAOUA",
+    "code": 98818,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "2648"
+  },
+  {
+    "id": 1700,
+    "localite": "FAYAOUE",
+    "code": 98814,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "4436"
+  },
+  {
+    "id": 4350,
+    "localite": "MOU",
+    "code": 98885,
+    "typeDomicile": false,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "270"
+  },
+  {
+    "id": 2850,
+    "localite": "PORO",
+    "code": 98838,
+    "typeDomicile": true,
+    "typeBp": true,
+    "bpMin": "1",
+    "bpMax": "127"
+  }
+]

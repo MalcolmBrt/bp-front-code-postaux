@@ -63,8 +63,7 @@
 
 @for (codePostal of codesPostauxJson; track $index) {
 <app-resultat-cp
-  [localite]="codePostal.localite"
-  [code]="codePostal.code"
+  [codePostal] = "codePostal"
 ></app-resultat-cp>
 }
 }
