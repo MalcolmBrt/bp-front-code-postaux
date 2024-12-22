@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build the application
-        run: npm run build --configuration=github-pages
+        run: ng build --configuration=github-pages --base-href="/bp-front-code-postaux/"
 
       - name: Copy index.html to 404.html
         run: cp ./dist/bp-front-code-postaux/browser/index.html ./dist/bp-front-code-postaux/browser/404.html
