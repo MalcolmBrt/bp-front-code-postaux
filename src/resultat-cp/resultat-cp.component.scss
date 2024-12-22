@@ -5,14 +5,33 @@
   padding: 12px;
   margin-bottom: 12px;
   font-size: 1.1rem;
-  text-transform: uppercase;
 
-  .localite {
-    font-size: 1.2rem;
-    font-weight: bold;
+  .header {
     color: var(--color-accent);
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    .localite {
+      font-size: 1.2rem;
+      font-weight: bold;
+      flex-grow: 1;
+    }
+
+    .types {
+      display: flex;
+      gap: 4px;
+
+      .type {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--color-primary);
+        border-radius: 4px;
+        padding: 1px;
+      }
+    }
   }
 
   .details {
