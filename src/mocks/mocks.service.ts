@@ -17,7 +17,7 @@ export class MocksService {
 
   getCodesPostaux(params: any): Observable<CodePostal[]> {
     return new Observable((subscriber) => {
-      subscriber.next(codesPostauxJson.filter((cp) => cp.localite === params.query));
+      subscriber.next(codesPostauxJson.filter((cp) => cp.localite === params.query || cp.commune === params.query));
     })
   }
 
