@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -33,20 +33,24 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   templateUrl: './codes-postaux.component.html',
   styleUrl: './codes-postaux.component.scss',
 })
-export class CodesPostauxComponent implements OnInit {
+export class CodesPostauxComponent implements OnInit, AfterViewInit {
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
   private codesPostauxService = inject(CodesPostauxService);
   private localitesService = inject(LocalitesService);
+  private breakpointObserver = inject(BreakpointObserver);
+  private cdref = inject(ChangeDetectorRef);
+
   codesPostauxJson: CodePostal[] = [];
   hasFoundResults = false;
   isLoading = false;
   previousValue = '';
   communes: string[] = [];
   filteredCommunes!: Observable<string[]>;
-  private breakpointObserver = inject(BreakpointObserver);
   isMobile = false;
+  
+  @ViewChild('autoFocusInput') autoFocusInput!: ElementRef;
 
   ngOnInit() {
     this.getCommunes();
@@ -55,6 +59,12 @@ export class CodesPostauxComponent implements OnInit {
       .subscribe((result) => {
         this.isMobile = result.matches;
       });
+  }
+    
+  ngAfterViewInit(): void {
+    // Mettre le focus sur l'élément dès que le composant est chargé
+    this.autoFocusInput.nativeElement.focus();
+    this.cdref.detectChanges();
   }
 
   search(): void {

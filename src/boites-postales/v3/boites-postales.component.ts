@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -39,6 +39,9 @@ export class BoitesPostalesComponent implements OnInit {
     numeroBP: new FormControl('', [Validators.required]),
   });
   private boitesPostalesService = inject(BoitesPostalesService);
+  private breakpointObserver = inject(BreakpointObserver);
+  private cdref = inject(ChangeDetectorRef);
+
   boitesPostalesJson: BoitePostale[] = [];
   hasFoundResults = false;
   isLoading = false;
@@ -47,8 +50,10 @@ export class BoitesPostalesComponent implements OnInit {
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
-  private breakpointObserver = inject(BreakpointObserver);
   isMobile = false;
+
+  @ViewChild('autoFocusInput') autoFocusInput!: ElementRef;
+  
 
   ngOnInit(): void {
     this.breakpointObserver
@@ -58,6 +63,11 @@ export class BoitesPostalesComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit(): void {
+    // Mettre le focus sur l'élément dès que le composant est chargé
+    this.autoFocusInput.nativeElement.focus();
+    this.cdref.detectChanges();
+  }
 
   getBoitesPostales(): void {
     const numeroBP = this.searchBPForm.value.numeroBP!; // numeroBP est forcément non null
