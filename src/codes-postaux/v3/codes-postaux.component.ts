@@ -8,11 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { LocalitesService } from './localites.service';
 import { CodePostal } from './code-postal';
-import { ResultatCpComponent } from "../../resultat-cp/resultat-cp.component";
+import { ResultatCpComponent } from '../../resultat-cp/resultat-cp.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -27,9 +28,10 @@ import { map, Observable, startWith } from 'rxjs';
     MatProgressBarModule,
     MatAutocompleteModule,
     AsyncPipe,
-],
+    CommonModule,
+  ],
   templateUrl: './codes-postaux.component.html',
-  styleUrl: '../shared/codes-postaux.component.scss',
+  styleUrl: './codes-postaux.component.scss',
 })
 export class CodesPostauxComponent implements OnInit {
   readonly searchCommuneForm = new FormGroup({
@@ -43,9 +45,16 @@ export class CodesPostauxComponent implements OnInit {
   previousValue = '';
   communes: string[] = [];
   filteredCommunes!: Observable<string[]>;
+  private breakpointObserver = inject(BreakpointObserver);
+  isMobile = false;
 
   ngOnInit() {
     this.getCommunes();
+    this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .subscribe((result) => {
+        this.isMobile = result.matches;
+      });
   }
 
   search(): void {

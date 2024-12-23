@@ -1,0 +1,23 @@
+.search-container {
+  display: flex;
+
+  .search-form-field {
+    flex-grow: 1;
+  }
+
+  .search-button {
+    margin-left: 1em;
+    height: 4em;
+
+    &.mobile {
+      mat-icon {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.cps-trouvées {
+  margin-bottom: 12px;
+  color: var(--color-accent);
+}

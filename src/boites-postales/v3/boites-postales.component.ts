@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -14,6 +14,8 @@ import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from './boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-boites-postales',
@@ -27,15 +29,14 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ResultatBpComponent,
     MatPaginatorModule,
     MatProgressBarModule,
+    CommonModule,
   ],
   templateUrl: './boites-postales.component.html',
-  styleUrl: '../shared/boites-postales.component.scss',
+  styleUrl: './boites-postales.component.scss',
 })
-export class BoitesPostalesComponent {
+export class BoitesPostalesComponent implements OnInit {
   readonly searchBPForm = new FormGroup({
-    numeroBP: new FormControl('', [
-      Validators.required,
-    ]),
+    numeroBP: new FormControl('', [Validators.required]),
   });
   private boitesPostalesService = inject(BoitesPostalesService);
   boitesPostalesJson: BoitePostale[] = [];
@@ -46,6 +47,17 @@ export class BoitesPostalesComponent {
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
+  private breakpointObserver = inject(BreakpointObserver);
+  isMobile = false;
+
+  ngOnInit(): void {
+    this.breakpointObserver
+    .observe([Breakpoints.Handset])
+    .subscribe((result) => {
+      this.isMobile = result.matches;
+    });
+  }
+
 
   getBoitesPostales(): void {
     const numeroBP = this.searchBPForm.value.numeroBP!; // numeroBP est forcément non null

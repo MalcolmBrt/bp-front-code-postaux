@@ -43,13 +43,14 @@
       }
     </mat-form-field>
     <button
-      mat-raised-button
+      mat-flat-button
       color="primary"
       type="submit"
       [disabled]="searchCommuneForm.controls.nomCommune.hasError('required')"
       class="search-button"
+      [ngClass]="{ mobile: isMobile }"
     >
-      <mat-icon>search</mat-icon>Rechercher
+      <mat-icon>search</mat-icon>{{ isMobile ? "" : "Rechercher" }}
     </button>
   </div>
 </form>
