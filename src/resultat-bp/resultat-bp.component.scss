@@ -39,5 +39,11 @@
     position: absolute;
     right: 12px;
     bottom: 12px;
+
+    &.mobile {
+      mat-icon {
+        margin: 0;
+      }
+    }
   }
 }

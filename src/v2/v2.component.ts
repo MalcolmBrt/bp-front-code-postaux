@@ -5,7 +5,7 @@ import { CodesPostauxComponent } from '../codes-postaux/v2/codes-postaux.compone
 import { BoitesPostalesComponent } from '../boites-postales/v2/boites-postales.component';
 
 @Component({
-  selector: 'app-v3',
+  selector: 'app-v2',
   standalone: true,
   imports: [CodesPostauxComponent, BoitesPostalesComponent, MatRadioModule, FormsModule],
   templateUrl: './v2.component.html',

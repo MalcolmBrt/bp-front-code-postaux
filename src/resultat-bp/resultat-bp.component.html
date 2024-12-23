@@ -12,7 +12,13 @@
       <span class="localite">{{ localite }}</span>
     </div>
   </div>
-  <button mat-flat-button color="primary" class="copy-button" (click)="copier(details)">
-    <mat-icon>content_copy</mat-icon>Copier
+  <button
+    mat-flat-button
+    color="primary"
+    class="copy-button"
+    [ngClass]="{ mobile: isMobile }"
+    (click)="copier(details)"
+  >
+    <mat-icon>content_copy</mat-icon>{{ isMobile ? "" : "Copier" }}
   </button>
 </div>

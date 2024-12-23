@@ -1,9 +1,30 @@
 <div class="navbar">
-        <img class="logo" src="images/opt_logo_courrier_navbar.svg" alt="Logo OPT-NC">
-        <div class="versions">
-          <button routerLink="/v1" routerLinkActive="active" mat-button color="accent" class="version-button">Version 1</button>
-          <button routerLink="/v2" routerLinkActive="active" mat-button color="accent" class="version-button">Version 2</button>
-          <button routerLink="/v3" routerLinkActive="active" mat-button color="accent" class="version-button">Version 3</button>
-        </div>
-        <button routerLink="/faq" routerLinkActive="active" mat-button color="accent" class="faq-button">FAQ</button>
+  <img class="logo" src="images/opt_logo_courrier_navbar.svg" alt="Logo OPT-NC">
+
+  @if (isMobile) {
+    <div class="versions">
+      <button mat-button [matMenuTriggerFor]="versionsMenu" color="accent">
+        Versions<mat-icon>expand_more</mat-icon>
+      </button>
+      <mat-menu #versionsMenu="matMenu">
+        <button mat-menu-item routerLink="/v1" routerLinkActive="active">
+          Version 1
+        </button>
+        <button mat-menu-item routerLink="/v2" routerLinkActive="active">
+          Version 2
+        </button>
+        <button mat-menu-item routerLink="/v3" routerLinkActive="active">
+          Version 3
+        </button>
+      </mat-menu>
+    </div>
+  } @else {
+    <div class="versions">
+      <button mat-button routerLink="/v1" routerLinkActive="active" color="accent">Version 1</button>
+      <button mat-button routerLink="/v2" routerLinkActive="active" color="accent">Version 2</button>
+      <button mat-button routerLink="/v3" routerLinkActive="active" color="accent">Version 3</button>
+    </div>
+  }
+  
+  <button mat-button routerLink="/faq" routerLinkActive="active" color="accent" class="faq-button">FAQ</button>
 </div>
