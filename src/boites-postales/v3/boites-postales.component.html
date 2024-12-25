@@ -49,19 +49,15 @@
 @if (isLoading) {
 <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 } @if (!isLoading && hasFoundResults) {
-
 <div class="bps-trouvées">
   {{ showNumberOfBPsFound() }}
 </div>
 
-@for (boitePostale of boitesPostalesJson; track $index) {
-<app-resultat-bp
-  [agence]="boitePostale.agence"
-  [numeroBP]="boitePostale.numero"
-  [codePostal]="boitePostale.codePostal"
-  [localite]="boitePostale.localite"
-></app-resultat-bp>
-}
+<div class="resultats-container">
+  @for (boitePostale of boitesPostalesJson; track $index) {
+  <app-resultat-bp [boitePostale]="boitePostale"></app-resultat-bp>
+  }
+</div>
 
 <mat-paginator
   (page)="handlePageEvent($event)"

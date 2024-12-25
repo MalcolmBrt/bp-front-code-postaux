@@ -21,3 +21,10 @@
   margin-bottom: 12px;
   color: var(--color-accent);
 }
+
+.resultats-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

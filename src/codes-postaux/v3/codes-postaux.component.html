@@ -63,6 +63,9 @@
   {{ showNumberOfCPsFound() }}
 </div>
 
-@for (codePostal of codesPostauxJson; track $index) {
-<app-resultat-cp [codePostal]="codePostal"></app-resultat-cp>
-} }
+<div class="resultats-container">
+  @for (codePostal of codesPostauxJson; track $index) {
+  <app-resultat-cp [codePostal]="codePostal"></app-resultat-cp>
+  }
+</div>
+}
