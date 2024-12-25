@@ -1,10 +1,12 @@
-.resultat-cp-container {
+.resultat-cp-wrapper {
   position: relative;
   border: 3px solid var(--color-primary);
   border-radius: 4px;
   padding: 12px;
-  margin-bottom: 12px;
+  padding-top: 18px;
   font-size: 1.1rem;
+  box-shadow: 0px 0px 10px grey;
+
 
   .header {
     color: var(--color-accent);
@@ -23,6 +25,8 @@
     .types {
       display: flex;
       gap: 4px;
+      position: absolute;
+      top: -16px;
 
       .type {
         display: flex;
@@ -30,6 +34,7 @@
         border: 1px solid var(--color-primary);
         border-radius: 4px;
         padding: 1px;
+        background-color: var(--bg-color);
       }
     }
   }
