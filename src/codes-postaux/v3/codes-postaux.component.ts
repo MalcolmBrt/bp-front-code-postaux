@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { LocalitesService } from './localites.service';
 import { CodePostal } from './code-postal';
-import { ResultatCpComponent } from '../../resultat-cp/resultat-cp.component';
+import { ResultatCpComponent } from './resultat-cp/resultat-cp.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AsyncPipe, CommonModule } from '@angular/common';
@@ -55,7 +55,7 @@ export class CodesPostauxComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.getCommunes();
     this.breakpointObserver
-      .observe([Breakpoints.Handset])
+      .observe([Breakpoints.HandsetPortrait])
       .subscribe((result) => {
         this.isMobile = result.matches;
       });

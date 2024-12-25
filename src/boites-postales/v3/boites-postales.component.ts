@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { ResultatBpComponent } from '../../resultat-bp/resultat-bp.component';
+import { ResultatBpComponent } from './resultat-bp/resultat-bp.component';
 import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from './boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -57,7 +57,7 @@ export class BoitesPostalesComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakpointObserver
-    .observe([Breakpoints.Handset])
+    .observe([Breakpoints.HandsetPortrait])
     .subscribe((result) => {
       this.isMobile = result.matches;
     });

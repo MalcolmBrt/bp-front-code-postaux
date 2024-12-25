@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CodePostal } from '../codes-postaux/v3/code-postal';
+import { CodePostal } from '../code-postal';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
