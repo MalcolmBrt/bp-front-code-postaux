@@ -1,15 +1,15 @@
-<div class="resultat-bp-container">
-  <div class="agence">{{ agence }}</div>
+<div class="resultat-bp-wrapper">
+  <div class="agence">{{ boitePostale.agence }}</div>
   <div class="details" #details>
     <div>Nom de l'organisme</div>
     <div>Identité du destinataire</div>
-    <div>BP {{ numeroBP }}</div>
+    <div>BP {{ boitePostale.numero }}</div>
     <div class="code-postal">
-      @for (digit of codePostal.toString(); track $index) {
+      @for (digit of boitePostale.codePostal.toString(); track $index) {
       <span class="digit-border">{{ digit }}</span>
       }
       <span>{{ " " }}</span>
-      <span class="localite">{{ localite }}</span>
+      <span class="localite">{{ boitePostale.localite }}</span>
     </div>
   </div>
   <button

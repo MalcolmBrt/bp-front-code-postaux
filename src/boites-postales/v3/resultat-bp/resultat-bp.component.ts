@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import { BoitePostale } from '../boite-postale';
 
 
 @Component({
@@ -14,10 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './resultat-bp.component.scss',
 })
 export class ResultatBpComponent implements OnInit {
-  @Input() agence!: string;
-  @Input() numeroBP!: string;
-  @Input() codePostal!: number;
-  @Input() localite!: string;
+  @Input() boitePostale!: BoitePostale;
 
   isMobile = false;
 
