@@ -5,9 +5,13 @@
     </div>
     <div class="types">
       @if (codePostal.typeBp) {
-      <div class="type"><mat-icon>local_post_office</mat-icon>{{ isMobile ? "" : "BP" }}</div>
+      <div class="type">
+        <mat-icon>local_post_office</mat-icon>{{ isMobile ? "" : "BP" }}
+      </div>
       } @if (codePostal.typeDomicile) {
-      <div class="type"><mat-icon>home</mat-icon>{{ isMobile ? "" : "Domicile" }}</div>
+      <div class="type">
+        <mat-icon>home</mat-icon>{{ isMobile ? "" : "Domicile" }}
+      </div>
       }
     </div>
   </div>
