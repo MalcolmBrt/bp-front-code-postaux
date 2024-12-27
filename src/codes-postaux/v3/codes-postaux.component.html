@@ -7,6 +7,7 @@
     >
       <mat-label>Commune</mat-label>
       <input
+        #autoFocusInput
         matInput
         type="text"
         placeholder="ex : NOUMEA"
@@ -43,13 +44,14 @@
       }
     </mat-form-field>
     <button
-      mat-raised-button
+      mat-flat-button
       color="primary"
       type="submit"
       [disabled]="searchCommuneForm.controls.nomCommune.hasError('required')"
       class="search-button"
+      [ngClass]="{ mobile: isMobile }"
     >
-      <mat-icon>search</mat-icon>Rechercher
+      <mat-icon>search</mat-icon>{{ isMobile ? "" : "Rechercher" }}
     </button>
   </div>
 </form>
@@ -61,9 +63,9 @@
   {{ showNumberOfCPsFound() }}
 </div>
 
-@for (codePostal of codesPostauxJson; track $index) {
-<app-resultat-cp
-  [codePostal] = "codePostal"
-></app-resultat-cp>
-}
+<div class="resultats-container">
+  @for (codePostal of codesPostauxJson; track $index) {
+  <app-resultat-cp [codePostal]="codePostal"></app-resultat-cp>
+  }
+</div>
 }

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -8,11 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { CodesPostauxService } from './codes-postaux.service';
 import { LocalitesService } from './localites.service';
 import { CodePostal } from './code-postal';
-import { ResultatCpComponent } from "../../resultat-cp/resultat-cp.component";
+import { ResultatCpComponent } from './resultat-cp/resultat-cp.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-codes-postaux',
@@ -27,25 +28,43 @@ import { map, Observable, startWith } from 'rxjs';
     MatProgressBarModule,
     MatAutocompleteModule,
     AsyncPipe,
-],
+    CommonModule,
+  ],
   templateUrl: './codes-postaux.component.html',
-  styleUrl: '../shared/codes-postaux.component.scss',
+  styleUrl: './codes-postaux.component.scss',
 })
-export class CodesPostauxComponent implements OnInit {
+export class CodesPostauxComponent implements OnInit, AfterViewInit {
   readonly searchCommuneForm = new FormGroup({
     nomCommune: new FormControl('', [Validators.required]),
   });
   private codesPostauxService = inject(CodesPostauxService);
   private localitesService = inject(LocalitesService);
+  private breakpointObserver = inject(BreakpointObserver);
+  private cdref = inject(ChangeDetectorRef);
+
   codesPostauxJson: CodePostal[] = [];
   hasFoundResults = false;
   isLoading = false;
   previousValue = '';
   communes: string[] = [];
   filteredCommunes!: Observable<string[]>;
+  isMobile = false;
+  
+  @ViewChild('autoFocusInput') autoFocusInput!: ElementRef;
 
   ngOnInit() {
     this.getCommunes();
+    this.breakpointObserver
+      .observe([Breakpoints.HandsetPortrait])
+      .subscribe((result) => {
+        this.isMobile = result.matches;
+      });
+  }
+    
+  ngAfterViewInit(): void {
+    // Mettre le focus sur l'élément dès que le composant est chargé
+    this.autoFocusInput.nativeElement.focus();
+    this.cdref.detectChanges();
   }
 
   search(): void {

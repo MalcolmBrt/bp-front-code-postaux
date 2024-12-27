@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -9,11 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { ResultatBpComponent } from '../../resultat-bp/resultat-bp.component';
+import { ResultatBpComponent } from './resultat-bp/resultat-bp.component';
 import { BoitesPostalesService } from './boites-postales.service';
 import { BoitePostale } from './boite-postale';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-boites-postales',
@@ -27,17 +29,19 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ResultatBpComponent,
     MatPaginatorModule,
     MatProgressBarModule,
+    CommonModule,
   ],
   templateUrl: './boites-postales.component.html',
-  styleUrl: '../shared/boites-postales.component.scss',
+  styleUrl: './boites-postales.component.scss',
 })
-export class BoitesPostalesComponent {
+export class BoitesPostalesComponent implements OnInit {
   readonly searchBPForm = new FormGroup({
-    numeroBP: new FormControl('', [
-      Validators.required,
-    ]),
+    numeroBP: new FormControl('', [Validators.required]),
   });
   private boitesPostalesService = inject(BoitesPostalesService);
+  private breakpointObserver = inject(BreakpointObserver);
+  private cdref = inject(ChangeDetectorRef);
+
   boitesPostalesJson: BoitePostale[] = [];
   hasFoundResults = false;
   isLoading = false;
@@ -46,6 +50,24 @@ export class BoitesPostalesComponent {
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50];
+  isMobile = false;
+
+  @ViewChild('autoFocusInput') autoFocusInput!: ElementRef;
+  
+
+  ngOnInit(): void {
+    this.breakpointObserver
+    .observe([Breakpoints.HandsetPortrait])
+    .subscribe((result) => {
+      this.isMobile = result.matches;
+    });
+  }
+
+  ngAfterViewInit(): void {
+    // Mettre le focus sur l'élément dès que le composant est chargé
+    this.autoFocusInput.nativeElement.focus();
+    this.cdref.detectChanges();
+  }
 
   getBoitesPostales(): void {
     const numeroBP = this.searchBPForm.value.numeroBP!; // numeroBP est forcément non null

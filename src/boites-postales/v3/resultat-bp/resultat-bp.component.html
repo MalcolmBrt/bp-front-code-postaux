@@ -1,0 +1,28 @@
+<div class="resultat-bp-wrapper">
+  <div class="header">
+    <div class="agence">{{ boitePostale.agence }}</div>
+  </div>
+  <div class="details" #details>
+    <div class="enveloppe">
+      <div>Nom de l'organisme</div>
+      <div>Identité du destinataire</div>
+      <div>BP {{ boitePostale.numero }}</div>
+      <div class="code-postal">
+        @for (digit of boitePostale.codePostal.toString(); track $index) {
+        <span class="digit-border">{{ digit }}</span>
+        }
+        <span>{{ " " }}</span>
+        <span class="localite">{{ boitePostale.localite }}</span>
+      </div>
+    </div>
+    <button
+      mat-flat-button
+      color="primary"
+      class="copy-button"
+      [ngClass]="{ mobile: isMobile }"
+      (click)="copier(details)"
+    >
+      <mat-icon>content_copy</mat-icon>{{ isMobile ? "" : "Copier" }}
+    </button>
+  </div>
+</div>

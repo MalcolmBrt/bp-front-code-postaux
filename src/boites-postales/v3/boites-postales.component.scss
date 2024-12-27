@@ -1,0 +1,35 @@
+.search-container {
+  display: flex;
+
+  .search-form-field {
+    flex-grow: 1;
+  }
+
+  .search-button {
+    margin-left: 1em;
+    height: 4em;
+
+    &.mobile {
+      mat-icon {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.bps-trouvées {
+  margin-bottom: 12px;
+  color: var(--color-accent);
+}
+
+.resultats-container {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+mat-paginator {
+  background-color: transparent;
+}

@@ -8,18 +8,21 @@
   .versions {
     height: 100%;
     margin-right: auto;
+    margin-left: 10px;
+    display: flex;
+    gap: 5px;
   }
 
   .logo {
     height: 90%;
   }
+}
 
-  button {
-    height: 100%;
-    margin-left: 20px;
-  }
+button {
+  height: 100%;
+  color: var(--color-accent);
+}
 
-  .active {
-    border: 2px solid var(--color-primary);
-  }
+.active {
+  border: 2px solid var(--color-primary);
 }
