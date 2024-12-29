@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Ensemble des boîtes postales associés au {{ data.code }}</h2>
+<mat-dialog-content>
+  <table mat-table [dataSource]="data.intervalles">
+
+    <!-- Début Column -->
+    <ng-container matColumnDef="debut">
+      <th mat-header-cell *matHeaderCellDef> Début </th>
+      <td mat-cell *matCellDef="let interval"> {{ interval[0] }} </td>
+    </ng-container>
+
+    <!-- Fin Column -->
+    <ng-container matColumnDef="fin">
+      <th mat-header-cell *matHeaderCellDef> Fin </th>
+      <td mat-cell *matCellDef="let interval"> {{ interval[1] }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fermer</button>
+</mat-dialog-actions>

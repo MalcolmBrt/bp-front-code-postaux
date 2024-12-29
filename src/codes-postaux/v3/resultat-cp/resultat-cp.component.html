@@ -18,7 +18,9 @@
   <div class="details">
     <div>{{ codePostal.code }}</div>
     @if (codePostal.typeBp) {
-    <div>BPs {{ codePostal.bpMin }} à {{ codePostal.bpMax }}</div>
+      <button mat-flat-button color="primary" class="bps-button" [ngClass]="{ mobile: isMobile }" (click)="ouvrirIntervalles()">
+        <mat-icon>list</mat-icon>{{ isMobile ? "" : "BPs associées" }}
+      </button>
     }
   </div>
 </div>

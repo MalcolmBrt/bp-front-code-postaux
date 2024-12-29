@@ -3,7 +3,7 @@
   border: 3px solid var(--color-primary);
   border-radius: 4px;
   padding: 12px;
-  padding-top: 18px;
+  padding: 18px 12px 12px;
   font-size: 1.1rem;
   box-shadow: 0px 0px 10px grey;
   color: var(--color-accent);
@@ -11,6 +11,9 @@
   .header {
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-transform: uppercase;
 
     .localite {
@@ -37,5 +40,17 @@
 
   .details {
     padding-top: 8px;
+    color: var(--color-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .bps-button {
+      &.mobile {
+        mat-icon {
+          margin: 0;
+        }
+      }
+    }
   }
 }

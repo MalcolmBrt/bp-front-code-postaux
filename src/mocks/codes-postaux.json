@@ -6,8 +6,7 @@
     "code": 98800,
     "typeDomicile": true,
     "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
+    "intervalles": []
   },
   {
     "id": 1100,
@@ -16,8 +15,12 @@
     "code": 98801,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "7001",
-    "bpMax": "7970"
+    "intervalles": [
+      [
+        "7001",
+        "7970"
+      ]
+    ]
   },
   {
     "id": 1150,
@@ -26,8 +29,32 @@
     "code": 98802,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "11001",
-    "bpMax": "MGA40"
+    "intervalles": [
+      [
+        "11001",
+        "12632"
+      ],
+      [
+        "12635",
+        "12642"
+      ],
+      [
+        "12645",
+        "12652"
+      ],
+      [
+        "12655",
+        "12662"
+      ],
+      [
+        "12665",
+        "13000"
+      ],
+      [
+        "MGA01",
+        "MGA40"
+      ]
+    ]
   },
   {
     "id": 1200,
@@ -36,8 +63,28 @@
     "code": 98803,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "13001",
-    "bpMax": "15000"
+    "intervalles": [
+      [
+        "13001",
+        "14732"
+      ],
+      [
+        "14735",
+        "14742"
+      ],
+      [
+        "14745",
+        "14752"
+      ],
+      [
+        "14755",
+        "14762"
+      ],
+      [
+        "14765",
+        "15000"
+      ]
+    ]
   },
   {
     "id": 1250,
@@ -46,8 +93,12 @@
     "code": 98804,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "15001",
-    "bpMax": "16900"
+    "intervalles": [
+      [
+        "15001",
+        "16900"
+      ]
+    ]
   },
   {
     "id": 1300,
@@ -56,8 +107,12 @@
     "code": 98805,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "10001",
-    "bpMax": "11004"
+    "intervalles": [
+      [
+        "10001",
+        "11004"
+      ]
+    ]
   },
   {
     "id": 1350,
@@ -66,8 +121,12 @@
     "code": 98806,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "6001",
-    "bpMax": "6950"
+    "intervalles": [
+      [
+        "6001",
+        "6950"
+      ]
+    ]
   },
   {
     "id": 1400,
@@ -76,328 +135,12 @@
     "code": 98807,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "8001",
-    "bpMax": "9800"
-  },
-  {
-    "id": 1450,
-    "commune": "MONT DORE",
-    "localite": "MONT DORE",
-    "code": 98809,
-    "typeDomicile": true,
-    "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
-  },
-  {
-    "id": 1500,
-    "commune": "MONT DORE",
-    "localite": "MONT DORE",
-    "code": 98810,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "6424"
-  },
-  {
-    "id": 1550,
-    "commune": "BELEP",
-    "localite": "BELEP",
-    "code": 98811,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "100"
-  },
-  {
-    "id": 1600,
-    "commune": "BOULOUPARIS",
-    "localite": "BOULOUPARIS",
-    "code": 98812,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "1498"
-  },
-  {
-    "id": 1650,
-    "commune": "CANALA",
-    "localite": "CANALA",
-    "code": 98813,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3648"
-  },
-  {
-    "id": 1700,
-    "commune": "OUVEA",
-    "localite": "FAYAOUE",
-    "code": 98814,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4436"
-  },
-  {
-    "id": 1750,
-    "commune": "HIENGHENE",
-    "localite": "HIENGHENE",
-    "code": 98815,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "5024"
-  },
-  {
-    "id": 1800,
-    "commune": "HOUAILOU",
-    "localite": "HOUAILOU",
-    "code": 98816,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "5312"
-  },
-  {
-    "id": 1850,
-    "commune": "KAALA GOMEN",
-    "localite": "KAALA GOMEN",
-    "code": 98817,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3336"
-  },
-  {
-    "id": 1900,
-    "commune": "KOUAOUA",
-    "localite": "KOUAOUA",
-    "code": 98818,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "2648"
-  },
-  {
-    "id": 1950,
-    "commune": "MOINDOU",
-    "localite": "MOINDOU",
-    "code": 98819,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3424"
-  },
-  {
-    "id": 2000,
-    "commune": "LIFOU",
-    "localite": "WE",
-    "code": 98820,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "5936"
-  },
-  {
-    "id": 2050,
-    "commune": "OUEGOA",
-    "localite": "OUEGOA",
-    "code": 98821,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4124"
-  },
-  {
-    "id": 2100,
-    "commune": "POINDIMIE",
-    "localite": "POINDIMIE",
-    "code": 98822,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4924"
-  },
-  {
-    "id": 2150,
-    "commune": "PONERIHOUEN",
-    "localite": "PONERIHOUEN",
-    "code": 98823,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3824"
-  },
-  {
-    "id": 2200,
-    "commune": "POUEBO",
-    "localite": "POUEBO",
-    "code": 98824,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4648"
-  },
-  {
-    "id": 2250,
-    "commune": "POUEMBOUT",
-    "localite": "POUEMBOUT",
-    "code": 98825,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3124"
-  },
-  {
-    "id": 2300,
-    "commune": "POUM",
-    "localite": "POUM",
-    "code": 98826,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "2424"
-  },
-  {
-    "id": 2350,
-    "commune": "POYA",
-    "localite": "POYA",
-    "code": 98827,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4124"
-  },
-  {
-    "id": 2400,
-    "commune": "MARE",
-    "localite": "TADINE",
-    "code": 98828,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4124"
-  },
-  {
-    "id": 2450,
-    "commune": "THIO",
-    "localite": "THIO",
-    "code": 98829,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3548"
-  },
-  {
-    "id": 2500,
-    "commune": "DUMBEA",
-    "localite": "DUMBEA",
-    "code": 98830,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4200"
-  },
-  {
-    "id": 2550,
-    "commune": "TOUHO",
-    "localite": "TOUHO",
-    "code": 98831,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3424"
-  },
-  {
-    "id": 2600,
-    "commune": "ILE DES PINS",
-    "localite": "VAO",
-    "code": 98832,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "2224"
-  },
-  {
-    "id": 2650,
-    "commune": "VOH",
-    "localite": "VOH",
-    "code": 98833,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4348"
-  },
-  {
-    "id": 2700,
-    "commune": "YATE",
-    "localite": "YATE",
-    "code": 98834,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "2524"
-  },
-  {
-    "id": 2750,
-    "commune": "DUMBEA",
-    "localite": "DUMBEA",
-    "code": 98835,
-    "typeDomicile": true,
-    "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
-  },
-  {
-    "id": 2800,
-    "commune": "DUMBEA",
-    "localite": "DUMBEA GA",
-    "code": 98836,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "850"
-  },
-  {
-    "id": 4650,
-    "commune": "DUMBEA",
-    "localite": "DUMBEA",
-    "code": 98837,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "10001",
-    "bpMax": "10250"
-  },
-  {
-    "id": 2850,
-    "commune": "HOUAILOU",
-    "localite": "PORO",
-    "code": 98838,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "127"
-  },
-  {
-    "id": 2900,
-    "commune": "DUMBEA",
-    "localite": "DUMBEA",
-    "code": 98839,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "4001",
-    "bpMax": "5100"
-  },
-  {
-    "id": 2950,
-    "commune": "PAITA",
-    "localite": "TONTOUTA",
-    "code": 98840,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "750"
+    "intervalles": [
+      [
+        "8001",
+        "9800"
+      ]
+    ]
   },
   {
     "id": 3000,
@@ -406,8 +149,7 @@
     "code": 98841,
     "typeDomicile": false,
     "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
+    "intervalles": []
   },
   {
     "id": 3050,
@@ -416,8 +158,12 @@
     "code": 98843,
     "typeDomicile": false,
     "typeBp": false,
-    "bpMin": "38",
-    "bpMax": "38"
+    "intervalles": [
+      [
+        "38",
+        "38"
+      ]
+    ]
   },
   {
     "id": 3100,
@@ -426,8 +172,12 @@
     "code": 98844,
     "typeDomicile": false,
     "typeBp": false,
-    "bpMin": "C5",
-    "bpMax": "C5"
+    "intervalles": [
+      [
+        "C5",
+        "C5"
+      ]
+    ]
   },
   {
     "id": 4700,
@@ -436,8 +186,24 @@
     "code": 98845,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "1900"
+    "intervalles": [
+      [
+        "1",
+        "37"
+      ],
+      [
+        "39",
+        "743"
+      ],
+      [
+        "747",
+        "753"
+      ],
+      [
+        "757",
+        "1900"
+      ]
+    ]
   },
   {
     "id": 4750,
@@ -446,8 +212,24 @@
     "code": 98846,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "1901",
-    "bpMax": "4200"
+    "intervalles": [
+      [
+        "1901",
+        "2783"
+      ],
+      [
+        "2787",
+        "2793"
+      ],
+      [
+        "2797",
+        "2803"
+      ],
+      [
+        "2807",
+        "4200"
+      ]
+    ]
   },
   {
     "id": 4800,
@@ -456,8 +238,12 @@
     "code": 98847,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "4201",
-    "bpMax": "5100"
+    "intervalles": [
+      [
+        "4201",
+        "5100"
+      ]
+    ]
   },
   {
     "id": 3150,
@@ -466,8 +252,32 @@
     "code": 98848,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "A1",
-    "bpMax": "G5"
+    "intervalles": [
+      [
+        "A1",
+        "A5"
+      ],
+      [
+        "C1",
+        "C4"
+      ],
+      [
+        "D1",
+        "D5"
+      ],
+      [
+        "E1",
+        "E5"
+      ],
+      [
+        "F1",
+        "F5"
+      ],
+      [
+        "G1",
+        "G5"
+      ]
+    ]
   },
   {
     "id": 3200,
@@ -476,18 +286,28 @@
     "code": 98849,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "H1",
-    "bpMax": "M5"
-  },
-  {
-    "id": 3250,
-    "commune": "KOUMAC",
-    "localite": "KOUMAC",
-    "code": 98850,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "3324"
+    "intervalles": [
+      [
+        "H1",
+        "H5"
+      ],
+      [
+        "J1",
+        "J5"
+      ],
+      [
+        "K1",
+        "K5"
+      ],
+      [
+        "L1",
+        "L5"
+      ],
+      [
+        "M1",
+        "M5"
+      ]
+    ]
   },
   {
     "id": 3300,
@@ -496,8 +316,32 @@
     "code": 98851,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "N2",
-    "bpMax": "R5"
+    "intervalles": [
+      [
+        "N1",
+        "N2"
+      ],
+      [
+        "N2",
+        "N5"
+      ],
+      [
+        "P1",
+        "P5"
+      ],
+      [
+        "Q1",
+        "Q3"
+      ],
+      [
+        "Q5",
+        "Q5"
+      ],
+      [
+        "R1",
+        "R5"
+      ]
+    ]
   },
   {
     "id": 3350,
@@ -506,8 +350,24 @@
     "code": 98852,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "T1",
-    "bpMax": "X5"
+    "intervalles": [
+      [
+        "T1",
+        "T5"
+      ],
+      [
+        "U1",
+        "U5"
+      ],
+      [
+        "W1",
+        "W5"
+      ],
+      [
+        "X1",
+        "X5"
+      ]
+    ]
   },
   {
     "id": 4850,
@@ -516,8 +376,12 @@
     "code": 98853,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "5101",
-    "bpMax": "5600"
+    "intervalles": [
+      [
+        "5101",
+        "5600"
+      ]
+    ]
   },
   {
     "id": 3400,
@@ -526,8 +390,12 @@
     "code": 98855,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "20001",
-    "bpMax": "20100"
+    "intervalles": [
+      [
+        "20001",
+        "20100"
+      ]
+    ]
   },
   {
     "id": 3450,
@@ -536,28 +404,12 @@
     "code": 98857,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "18001",
-    "bpMax": "18950"
-  },
-  {
-    "id": 3500,
-    "commune": "KONE",
-    "localite": "KONE",
-    "code": 98859,
-    "typeDomicile": true,
-    "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
-  },
-  {
-    "id": 3550,
-    "commune": "KONE",
-    "localite": "KONE",
-    "code": 98860,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "7250"
+    "intervalles": [
+      [
+        "18001",
+        "18950"
+      ]
+    ]
   },
   {
     "id": 3600,
@@ -566,8 +418,12 @@
     "code": 98862,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "17001",
-    "bpMax": "18000"
+    "intervalles": [
+      [
+        "17001",
+        "18000"
+      ]
+    ]
   },
   {
     "id": 3650,
@@ -576,8 +432,12 @@
     "code": 98863,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "27001",
-    "bpMax": "27900"
+    "intervalles": [
+      [
+        "27001",
+        "27900"
+      ]
+    ]
   },
   {
     "id": 3700,
@@ -586,8 +446,16 @@
     "code": 98865,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "40001",
-    "bpMax": "DCS18"
+    "intervalles": [
+      [
+        "40001",
+        "40001"
+      ],
+      [
+        "DCS02",
+        "DCS18"
+      ]
+    ]
   },
   {
     "id": 3750,
@@ -596,148 +464,12 @@
     "code": 98866,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "26001",
-    "bpMax": "27000"
-  },
-  {
-    "id": 3800,
-    "commune": "BOURAIL",
-    "localite": "BOURAIL",
-    "code": 98870,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4548"
-  },
-  {
-    "id": 3850,
-    "commune": "MONT DORE",
-    "localite": "PONT DES FRANÇAIS",
-    "code": 98874,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1001",
-    "bpMax": "2700"
-  },
-  {
-    "id": 3900,
-    "commune": "MONT DORE",
-    "localite": "PLUM",
-    "code": 98875,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "5001",
-    "bpMax": "6011"
-  },
-  {
-    "id": 3950,
-    "commune": "MONT DORE",
-    "localite": "LA COULEE",
-    "code": 98876,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "7001",
-    "bpMax": "7950"
-  },
-  {
-    "id": 4000,
-    "commune": "POYA",
-    "localite": "NEPOUI",
-    "code": 98877,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "500"
-  },
-  {
-    "id": 4050,
-    "commune": "MARE",
-    "localite": "LA ROCHE",
-    "code": 98878,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1001",
-    "bpMax": "1450"
-  },
-  {
-    "id": 4100,
-    "commune": "LA FOA",
-    "localite": "LA FOA",
-    "code": 98880,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "4224"
-  },
-  {
-    "id": 4150,
-    "commune": "FARINO",
-    "localite": "FARINO",
-    "code": 98881,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "348"
-  },
-  {
-    "id": 4200,
-    "commune": "SARRAMEA",
-    "localite": "SARRAMEA",
-    "code": 98882,
-    "typeDomicile": true,
-    "typeBp": true,
-    "bpMin": "2001",
-    "bpMax": "2324"
-  },
-  {
-    "id": 4250,
-    "commune": "KAALA GOMEN",
-    "localite": "OUACO",
-    "code": 98883,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "100"
-  },
-  {
-    "id": 4300,
-    "commune": "LIFOU",
-    "localite": "CHEPENEHE",
-    "code": 98884,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "370"
-  },
-  {
-    "id": 4350,
-    "commune": "LIFOU",
-    "localite": "MOU",
-    "code": 98885,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "270"
-  },
-  {
-    "id": 4400,
-    "commune": "PAITA",
-    "localite": "PAITA",
-    "code": 98889,
-    "typeDomicile": true,
-    "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
-  },
-  {
-    "id": 4450,
-    "commune": "PAITA",
-    "localite": "PAITA",
-    "code": 98890,
-    "typeDomicile": false,
-    "typeBp": true,
-    "bpMin": "1",
-    "bpMax": "11250"
+    "intervalles": [
+      [
+        "26001",
+        "27000"
+      ]
+    ]
   },
   {
     "id": 4500,
@@ -746,8 +478,16 @@
     "code": 98895,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "91",
-    "bpMax": "31699"
+    "intervalles": [
+      [
+        "91",
+        "91"
+      ],
+      [
+        "30000",
+        "31699"
+      ]
+    ]
   },
   {
     "id": 4550,
@@ -756,8 +496,12 @@
     "code": 98897,
     "typeDomicile": false,
     "typeBp": true,
-    "bpMin": "32001",
-    "bpMax": "33500"
+    "intervalles": [
+      [
+        "32001",
+        "33500"
+      ]
+    ]
   },
   {
     "id": 4600,
@@ -766,7 +510,6 @@
     "code": 98899,
     "typeDomicile": false,
     "typeBp": false,
-    "bpMin": null,
-    "bpMax": null
+    "intervalles": []
   }
 ]

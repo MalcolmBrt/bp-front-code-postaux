@@ -5,6 +5,5 @@ export interface CodePostal {
   code: number;
   typeDomicile: boolean;
   typeBp: boolean;
-  bpMin: string | null;
-  bpMax: string | null;
+  intervalles: string[][];
 }
