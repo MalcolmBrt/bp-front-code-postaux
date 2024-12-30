@@ -56,6 +56,7 @@ export class ResultatCpComponent {
 @Component({
   selector: 'app-resultat-cp-dialog',
   templateUrl: 'dialog/app-resultat-cp-dialog.html',
+  styleUrl: 'dialog/app-resultat-cp-dialog.scss',
   standalone: true,
   imports: [MatDialogModule, MatButtonModule, MatTableModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
