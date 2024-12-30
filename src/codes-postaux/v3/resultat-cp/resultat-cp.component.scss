@@ -1,11 +1,9 @@
 .resultat-cp-wrapper {
   position: relative;
-  border: 3px solid var(--color-primary);
   border-radius: 4px;
-  padding: 12px;
   padding: 18px 12px 12px;
   font-size: 1.1rem;
-  box-shadow: 0px 0px 10px grey;
+  box-shadow: -6px -2px 16px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
   color: var(--color-accent);
 
   .header {
@@ -17,6 +15,7 @@
     text-transform: uppercase;
 
     .localite {
+      margin-top: 5px;
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -53,4 +52,14 @@
       }
     }
   }
+}
+
+.chips{
+  display: flex;
+  align-items: center;
+  background: white;
+  border: solid 1px #fcb109;
+  color: #fcb109;;
+  border-radius: 15px;
+  padding: 0 10px;
 }

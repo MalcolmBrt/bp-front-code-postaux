@@ -5,12 +5,12 @@
     </div>
     <div class="types">
       @if (codePostal.typeBp) {
-      <div class="type">
-        <mat-icon>local_post_office</mat-icon>{{ isMobile ? "" : "BP" }}
+      <div class="chips">
+           <mat-icon>local_post_office</mat-icon>{{ isMobile ? "" : "BP" }}
       </div>
       } @if (codePostal.typeDomicile) {
-      <div class="type">
-        <mat-icon>home</mat-icon>{{ isMobile ? "" : "Domicile" }}
+      <div class="chips">
+         <mat-icon>home</mat-icon>{{ isMobile ? "" : "Domicile" }}
       </div>
       }
     </div>
@@ -18,7 +18,7 @@
   <div class="details">
     <div>{{ codePostal.code }}</div>
     @if (codePostal.typeBp) {
-      <button mat-flat-button color="primary" class="bps-button" [ngClass]="{ mobile: isMobile }" (click)="ouvrirIntervalles()">
+      <button mat-stroked-button color="primary" class="bps-button" [ngClass]="{ mobile: isMobile }" (click)="ouvrirIntervalles()">
         <mat-icon>list</mat-icon>{{ isMobile ? "" : "BPs associées" }}
       </button>
     }

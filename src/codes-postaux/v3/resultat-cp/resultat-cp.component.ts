@@ -15,11 +15,17 @@ import {
 import { MatTableModule } from '@angular/material/table';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import { MatChip, MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-resultat-cp',
   standalone: true,
-  imports: [MatIconModule, MatButtonModule, MatDialogModule, CommonModule],
+  imports: [
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    CommonModule
+  ],
   templateUrl: './resultat-cp.component.html',
   styleUrl: './resultat-cp.component.scss',
 })
@@ -49,7 +55,7 @@ export class ResultatCpComponent {
 
 @Component({
   selector: 'app-resultat-cp-dialog',
-  templateUrl: 'app-resultat-cp-dialog.html',
+  templateUrl: 'dialog/app-resultat-cp-dialog.html',
   standalone: true,
   imports: [MatDialogModule, MatButtonModule, MatTableModule],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,13 +1,11 @@
 .resultat-bp-wrapper {
   position: relative;
-  border: 3px solid var(--color-primary);
   border-radius: 4px;
-  padding: 12px;
+  padding: 16px;
   font-size: 1.1rem;
   text-transform: uppercase;
-  box-shadow: 0px 0px 10px grey;
   color: var(--color-accent);
-
+  box-shadow: -6px -2px 16px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
   .header {
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 8px;
@@ -47,4 +45,14 @@
       }
     }
   }
+}
+
+.chips{
+  display: flex;
+  align-items: center;
+  background: white;
+  border: solid 1px #fcb109;
+  color: #fcb109;;
+  border-radius: 15px;
+  padding: 0 10px;
 }
