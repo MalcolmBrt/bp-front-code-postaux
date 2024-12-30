@@ -24,15 +24,16 @@
       display: flex;
       gap: 4px;
       position: absolute;
-      top: -16px;
+      top: -14px;
 
-      .type {
+      .chips {
         display: flex;
         align-items: center;
-        border: 1px solid var(--color-primary);
-        border-radius: 4px;
-        padding: 1px;
-        background-color: var(--bg-color);
+        background: white;
+        border: solid 1px var(--color-primary);
+        color: var(--color-primary);
+        border-radius: 16px;
+        padding: 0px 10px;
       }
     }
   }
@@ -52,14 +53,4 @@
       }
     }
   }
-}
-
-.chips{
-  display: flex;
-  align-items: center;
-  background: white;
-  border: solid 1px #fcb109;
-  color: #fcb109;;
-  border-radius: 15px;
-  padding: 0 10px;
 }
