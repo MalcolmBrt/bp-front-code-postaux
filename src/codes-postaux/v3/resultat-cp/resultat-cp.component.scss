@@ -1,19 +1,21 @@
 .resultat-cp-wrapper {
   position: relative;
-  border: 3px solid var(--color-primary);
   border-radius: 4px;
-  padding: 12px;
-  padding-top: 18px;
+  padding: 18px 12px 12px;
   font-size: 1.1rem;
-  box-shadow: 0px 0px 10px grey;
+  box-shadow: -6px -2px 16px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
   color: var(--color-accent);
 
   .header {
     border-bottom: 2px solid var(--color-primary);
     padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-transform: uppercase;
 
     .localite {
+      margin-top: 5px;
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -22,20 +24,33 @@
       display: flex;
       gap: 4px;
       position: absolute;
-      top: -16px;
+      top: -14px;
 
-      .type {
+      .chips {
         display: flex;
         align-items: center;
-        border: 1px solid var(--color-primary);
-        border-radius: 4px;
-        padding: 1px;
-        background-color: var(--bg-color);
+        background: white;
+        border: solid 1px var(--color-primary);
+        color: var(--color-primary);
+        border-radius: 16px;
+        padding: 0px 10px;
       }
     }
   }
 
   .details {
     padding-top: 8px;
+    color: var(--color-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .bps-button {
+      &.mobile {
+        mat-icon {
+          margin: 0;
+        }
+      }
+    }
   }
 }
